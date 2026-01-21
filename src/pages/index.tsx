@@ -3,7 +3,8 @@ import Hero from "@/components/Hero";
 import WhatWeDo from "@/components/WhatWeDo";
 import AboutSection from "@/components/AboutSection";
 import MissionSection from "@/components/MissionSection";
-import CTAImageSection from "@/components/CTAImageSection";
+import MissionVision from "@/components/MissionVision";
+
 
 export default function Home() {
   return (
@@ -16,7 +17,8 @@ export default function Home() {
           <AboutSection />
           <WhatWeDo />
             <MissionSection />
-          <CTAImageSection />
+            <MissionVision />
+
       </>
   );
 }
