@@ -10,8 +10,9 @@ export default function Home() {
   return (
       <>
         <SEO
-            title="Nevatrix | Web Development, AI & Digital Marketing Company"
-            description="Nevatrix provides web development, AI solutions, UI UX design, and digital marketing services for modern businesses."
+            title="Custom Web Development Company | Nevatrix"
+            description="Nevatrix is a custom web development company delivering scalable, secure web solutions for startups and businesses. Get a free consultation."
+            url="https://nevatrix.com"
         />
             <Hero />
           <AboutSection />

@@ -14,7 +14,7 @@ export default function AboutMissionVision() {
                             <h2 className="text-5xl font-semibold text-white/90 mb-6">
                                 Our Mission
                             </h2>
-                            <p className="text-gray-300 text-lg leading-relaxed">
+                            <p className="text-gray-300 text-lg leading-relaxed text-justify">
                                 To build long-term partnerships by delivering innovative,
                                 scalable, and high-quality digital solutions that drive
                                 measurable business success.
@@ -25,7 +25,7 @@ export default function AboutMissionVision() {
                             <h2 className="text-5xl font-semibold text-white/90 mb-6">
                                 Our Vision
                             </h2>
-                            <p className="text-gray-300 text-lg leading-relaxed">
+                            <p className="text-gray-300 text-lg leading-relaxed text-justify">
                                 To redefine how businesses engage with technology by setting
                                 new benchmarks for innovation, quality, and impact.
                             </p>

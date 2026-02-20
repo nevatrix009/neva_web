@@ -108,3 +108,21 @@ body {
     transform: translateY(0%);
   }
 }
+/* Tech stack scrolling animation */
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.tech-scroll {
+  animation: scrollLeft 28s linear infinite;
+}
+
+.tech-scroll:hover {
+  animation-play-state: paused;
+}

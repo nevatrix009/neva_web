@@ -73,10 +73,8 @@ export default function Navbar() {
 
                         <ul className="absolute top-full left-0 mt-4 w-72 bg-gradient-to-br from-white to-purple-50 shadow-2xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                             <li><Link href="/services/ecommerce" className="flex items-center gap-3 px-5 py-3 hover:bg-purple-100/50 rounded-lg"><ShoppingCartIcon className="w-4 h-4 text-pink-600" />Ecommerce Development</Link></li>
-                            <li><Link href="/services/full-stack" className="flex items-center gap-3 px-5 py-3 hover:bg-purple-100/50 rounded-lg"><CodeBracketIcon className="w-4 h-4 text-indigo-600" />Full Stack</Link></li>
-                            <li><Link href="/services/cms" className="flex items-center gap-3 px-5 py-3 hover:bg-purple-100/50 rounded-lg"><BuildingOffice2Icon className="w-4 h-4 text-blue-600" />CMS Development</Link></li>
+                            <li><Link href="/services/full-stack" className="flex items-center gap-3 px-5 py-3 hover:bg-purple-100/50 rounded-lg"><CodeBracketIcon className="w-4 h-4 text-indigo-600" />Full Stack Development</Link></li>
                             <li><Link href="/services/mobile-app" className="flex items-center gap-3 px-5 py-3 hover:bg-purple-100/50 rounded-lg"><DevicePhoneMobileIcon className="w-4 h-4 text-green-600" />Mobile App Development</Link></li>
-                            <li><Link href="/services/ai-ml" className="flex items-center gap-3 px-5 py-3 hover:bg-purple-100/50 rounded-lg"><CpuChipIcon className="w-4 h-4 text-orange-600" />AI & ML</Link></li>
                             <li><Link href="/services/digital-marketing" className="flex items-center gap-3 px-5 py-3 hover:bg-purple-100/50 rounded-lg"><MegaphoneIcon className="w-4 h-4 text-red-600" />Digital Marketing</Link></li>
                         </ul>
                     </li>
@@ -84,7 +82,7 @@ export default function Navbar() {
                     {/* Contact */}
                     <li>
                         <Link
-                            href="/contact"
+                            href="/Contact"
                             className="flex items-center gap-2 px-5 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md hover:shadow-xl hover:scale-105 transition"
                         >
                             <EnvelopeIcon className="w-5 h-5" />
