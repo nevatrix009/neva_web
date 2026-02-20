@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <>
             {/* Google Analytics 4 (GA4) */}
             <Script
-                src="https://www.googletagmanager.com/gtag/js?id=G-ES4KHTK875"
+                src="https://www.googletagmanager.com/gtag/js?id=G-5CY0WRW3LQ"
                 strategy="afterInteractive"
             />
 
@@ -20,9 +20,11 @@ export default function App({ Component, pageProps }: AppProps) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-ES4KHTK875');
+          gtag('config', 'G-5CY0WRW3LQ');
         `}
             </Script>
+
+
 
             {/* Website Layout */}
             <TopBar />
