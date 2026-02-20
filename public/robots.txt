@@ -1,0 +1,44 @@
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Important for indexing
+Allow: /services/
+Allow: /blog/
+Allow: /portfolio/
+
+# Disallow unnecessary pages
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# OpenAI (ChatGPT browsing crawler)
+User-agent: OAI-SearchBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+# Common AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Bing (Microsoft Copilot)
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
+Sitemap: https://nevatrix.com/sitemap.xml
