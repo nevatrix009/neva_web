@@ -232,6 +232,7 @@ export default function SEO({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
             />
+
         </Head>
     );
 }
