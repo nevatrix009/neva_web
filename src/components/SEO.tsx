@@ -4,7 +4,7 @@ import Head from "next/head";
 const COMPANY = {
     name: "Nevatrix",
     url: "https://nevatrix.com",
-    logo: "https://nevatrix.com/logo.png",
+    logo: "https://nevatrix.com/Nevatrix_logo.png",
     email: "info@nevatrix.com",
     phone: "+91 9989183654",
     address: {
@@ -69,15 +69,15 @@ const SEO_DATA = {
     },
 };
 
-/* ---------- DEFAULT (HOMEPAGE) ---------- */
+/* ---------- HOMEPAGE DEFAULT SEO (VERY IMPORTANT) ---------- */
 const DEFAULT_SEO = {
-    title: "Nevatrix | Web Development & Digital Marketing Company in Warangal",
+    title: "Web Development & Digital Marketing Company in Warangal | Nevatrix",
     description:
-        "Nevatrix is a web development and digital marketing company in Warangal providing website design, SEO, ecommerce and software development services.",
+        "Nevatrix is a leading web development and digital marketing company in Warangal providing website design, SEO services, Google Ads, ecommerce development and software solutions for businesses in Telangana.",
     keywords:
-        "web development company warangal, digital marketing agency warangal, website designers hanamkonda, seo services nizamabad, software company khammam",
+        "web development company warangal, digital marketing agency warangal, seo services warangal, website designers warangal, ecommerce developers warangal, google ads agency warangal",
     url: "https://nevatrix.com",
-    service: "Software & Digital Services",
+    service: "Web Development & Digital Marketing",
 };
 
 /* ---------- PROPS ---------- */
@@ -99,11 +99,9 @@ export default function SEO({
                                 image,
                             }: SEOProps) {
 
-    /* Select page SEO or default */
     const baseData =
         (page && SEO_DATA[page as keyof typeof SEO_DATA]) || DEFAULT_SEO;
 
-    /* Allow manual overrides */
     const data = {
         ...baseData,
         title: title || baseData.title,
@@ -113,7 +111,7 @@ export default function SEO({
         image: image || "https://nevatrix.com/og-image.jpg",
     };
 
-    /* ---------- SCHEMA: ORGANIZATION ---------- */
+    /* ---------- ORGANIZATION ---------- */
     const organizationSchema = {
         "@context": "https://schema.org",
         "@type": "Organization",
@@ -132,7 +130,7 @@ export default function SEO({
         ],
     };
 
-    /* ---------- SCHEMA: LOCAL BUSINESS ---------- */
+    /* ---------- LOCAL BUSINESS ---------- */
     const localBusinessSchema = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -149,10 +147,31 @@ export default function SEO({
             postalCode: COMPANY.address.postal,
             addressCountry: COMPANY.address.country,
         },
-        areaServed: ["Warangal", "Hanamkonda", "Nizamabad", "Khammam"],
+        areaServed: ["Warangal", "Hanamkonda", "Kazipet", "Telangana"],
     };
 
-    /* ---------- SCHEMA: SERVICE ---------- */
+    /* ---------- PROFESSIONAL SERVICE (MOST IMPORTANT) ---------- */
+    const professionalServiceSchema = {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        name: COMPANY.name,
+        image: COMPANY.logo,
+        "@id": COMPANY.url,
+        url: COMPANY.url,
+        telephone: COMPANY.phone,
+        priceRange: "₹₹",
+        address: {
+            "@type": "PostalAddress",
+            streetAddress: COMPANY.address.street,
+            addressLocality: COMPANY.address.city,
+            addressRegion: COMPANY.address.state,
+            postalCode: COMPANY.address.postal,
+            addressCountry: COMPANY.address.country,
+        },
+        openingHours: "Mo-Sa 09:00-20:00",
+    };
+
+    /* ---------- SERVICE ---------- */
     const serviceSchema = {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -165,43 +184,30 @@ export default function SEO({
         areaServed: "India",
     };
 
-    /* ---------- SCHEMA: WEBSITE (AI SEO) ---------- */
-    const websiteSchema = {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        name: COMPANY.name,
-        url: COMPANY.url,
-        potentialAction: {
-            "@type": "SearchAction",
-            target: `${COMPANY.url}/search?q={search_term_string}`,
-            "query-input": "required name=search_term_string",
-        },
-    };
-
     return (
         <Head>
-            {/* Primary SEO */}
+            {/* PRIMARY SEO */}
             <title>{data.title}</title>
             <meta name="description" content={data.description} />
             <meta name="keywords" content={data.keywords} />
             <meta name="author" content="Nevatrix" />
 
-            {/* GEO Targeting */}
+            {/* GEO */}
             <meta name="geo.region" content="IN-TG" />
             <meta name="geo.placename" content="Warangal, Telangana, India" />
             <meta name="geo.position" content="17.9689;79.5941" />
             <meta name="ICBM" content="17.9689,79.5941" />
 
-            {/* Canonical */}
+            {/* CANONICAL */}
             <link rel="canonical" href={data.url} />
 
-            {/* Robots (AI + Google Crawlers) */}
+            {/* ROBOTS */}
             <meta
                 name="robots"
                 content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
             />
 
-            {/* Open Graph */}
+            {/* OPEN GRAPH */}
             <meta property="og:type" content="website" />
             <meta property="og:title" content={data.title} />
             <meta property="og:description" content={data.description} />
@@ -209,30 +215,17 @@ export default function SEO({
             <meta property="og:site_name" content="Nevatrix" />
             <meta property="og:image" content={data.image} />
 
-            {/* Twitter */}
+            {/* TWITTER */}
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={data.title} />
             <meta name="twitter:description" content={data.description} />
             <meta name="twitter:image" content={data.image} />
 
-            {/* JSON-LD SCHEMA */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-            />
-
+            {/* SCHEMA */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
         </Head>
     );
 }

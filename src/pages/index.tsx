@@ -9,14 +9,10 @@ import MissionVision from "@/components/MissionVision";
 export default function Home() {
   return (
       <>
-        <SEO
-            title="Custom Web Development Company | Nevatrix"
-            description="Nevatrix is a custom web development company delivering scalable, secure web solutions for startups and businesses. Get a free consultation."
-            url="https://nevatrix.com"
-        />
+            <SEO/>
             <Hero />
-          <AboutSection />
-          <WhatWeDo />
+            <AboutSection />
+            <WhatWeDo />
             <MissionSection />
             <MissionVision />
 
