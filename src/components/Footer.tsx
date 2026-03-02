@@ -47,6 +47,10 @@ export default function Footer() {
                     © 2012–{new Date().getFullYear()} Nevatrix Technologies Pvt. Ltd | All Rights Reserved
                 </p>
 
+                <p className="text-sm text-slate-600">
+                    Nevatrix is a <b>web development company in Warangal</b> providing website design and Best SEO services in Warangal, Khammam and Nizamabad and remote development services for businesses.
+                </p>
+
                 {/* SCROLL TO TOP */}
                 <button
                     onClick={scrollToTop}

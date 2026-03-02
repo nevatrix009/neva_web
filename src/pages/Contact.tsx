@@ -149,7 +149,7 @@ export default function ContactPage() {
                                 Let’s talk about your project
                             </h2>
 
-                            <form className="space-y-6">
+                            <form name="Contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" className="space-y-6">
 
                                 {/* NAME */}
                                 <div>

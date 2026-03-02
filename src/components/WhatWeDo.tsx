@@ -172,7 +172,7 @@ export default function WhatWeDo() {
                             Get Instant Quote
                         </h3>
 
-                        <form className="mt-8 space-y-5">
+                        <form name="instant-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" className="mt-8 space-y-5">
                             <input
                                 type="text"
                                 placeholder="Your Name*"
