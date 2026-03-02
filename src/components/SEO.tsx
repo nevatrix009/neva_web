@@ -72,7 +72,7 @@ const SEO_DATA = {
 
 /* ---------- HOMEPAGE SEO ---------- */
 const DEFAULT_SEO = {
-    title: "Web Development Company in Warangal | Website Designers - Nevatrix",
+    title: "AI-Driven Digital Marketing & Web Design Company in Warangal - Nevatrix",
     description:
         "Nevatrix is a web development company in Warangal providing website design, ecommerce development and SEO services. We serve businesses in Warangal, Hanamkonda, Khammam and Nizamabad and also offer remote web development services for clients in the USA and Canada.",
     keywords:
