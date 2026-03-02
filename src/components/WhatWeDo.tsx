@@ -1,6 +1,78 @@
+"use client";
+
 import { Monitor, BrainCircuit, Smartphone, Megaphone } from "lucide-react";
+import { useState, ChangeEvent, FormEvent } from "react";
+
+/* ---------- FORM DATA TYPE ---------- */
+type FormDataType = {
+    name: string;
+    email: string;
+    company: string;
+    mobile: string;
+    service: string;
+    comments: string;
+};
 
 export default function WhatWeDo() {
+
+    const [formData, setFormData] = useState<FormDataType>({
+        name: "",
+        email: "",
+        company: "",
+        mobile: "",
+        service: "",
+        comments: "",
+    });
+
+    const [loading, setLoading] = useState<boolean>(false);
+    const [message, setMessage] = useState<string>("");
+
+    const handleChange = (
+        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    ) => {
+        setFormData((prev) => ({
+            ...prev,
+            [e.target.name]: e.target.value,
+        }));
+    };
+
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setLoading(true);
+        setMessage("");
+
+        try {
+            const response = await fetch("/api/route", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setMessage("Thank you! We will contact you soon.");
+                setFormData({
+                    name: "",
+                    email: "",
+                    company: "",
+                    mobile: "",
+                    service: "",
+                    comments: "",
+                });
+            } else {
+                setMessage("Submission failed. Please try again.");
+            }
+
+        } catch (error) {
+            setMessage("Something went wrong. Try again.");
+        }
+
+        setLoading(false);
+    };
+
     return (
         <section className="bg-white py-28">
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12">
@@ -20,35 +92,14 @@ export default function WhatWeDo() {
                     <div className="mt-14 grid md:grid-cols-2 gap-12">
 
                         {/* CARD 1 */}
-                        <div className="group relative bg-white rounded-2xl p-8
-              border border-slate-200
-              shadow-sm hover:shadow-xl
-              hover:-translate-y-1
-              transition-all duration-300">
-
-                            {/* Default decorative line */}
-                            <div className="absolute left-0 top-6 bottom-6 w-[3px]
-                bg-gradient-to-b from-pink-400/40 to-transparent
-                rounded-full" />
-
-                            {/* Hover gradient overlay */}
-                            <div className="absolute inset-0 rounded-2xl opacity-0
-                group-hover:opacity-100 transition
-                bg-gradient-to-br from-pink-50 via-transparent to-transparent" />
-
+                        <div className="group relative bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-gradient-to-b from-pink-400/40 to-transparent rounded-full" />
+                            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-pink-50 via-transparent to-transparent" />
                             <div className="relative">
-                                <div className="w-14 h-14 rounded-full
-                  bg-pink-100 text-pink-600
-                  ring-4 ring-pink-100/40
-                  flex items-center justify-center
-                  group-hover:scale-110 transition">
+                                <div className="w-14 h-14 rounded-full bg-pink-100 text-pink-600 ring-4 ring-pink-100/40 flex items-center justify-center group-hover:scale-110 transition">
                                     <Monitor size={26} />
                                 </div>
-
-                                <h3 className="mt-6 text-lg font-semibold text-slate-900">
-                                    Web Development
-                                </h3>
-
+                                <h3 className="mt-6 text-lg font-semibold text-slate-900">Web Development</h3>
                                 <p className="mt-3 text-sm leading-relaxed text-slate-600 text-justify">
                                     Design and develop high-performance, SEO-friendly websites
                                     that attract customers and grow your digital presence.
@@ -57,33 +108,14 @@ export default function WhatWeDo() {
                         </div>
 
                         {/* CARD 2 */}
-                        <div className="group relative bg-white rounded-2xl p-8
-              border border-slate-200
-              shadow-sm hover:shadow-xl
-              hover:-translate-y-1
-              transition-all duration-300">
-
-                            <div className="absolute left-0 top-6 bottom-6 w-[3px]
-                bg-gradient-to-b from-orange-400/40 to-transparent
-                rounded-full" />
-
-                            <div className="absolute inset-0 rounded-2xl opacity-0
-                group-hover:opacity-100 transition
-                bg-gradient-to-br from-orange-50 via-transparent to-transparent" />
-
+                        <div className="group relative bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-gradient-to-b from-orange-400/40 to-transparent rounded-full" />
+                            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-orange-50 via-transparent to-transparent" />
                             <div className="relative">
-                                <div className="w-14 h-14 rounded-full
-                  bg-orange-100 text-orange-600
-                  ring-4 ring-orange-100/40
-                  flex items-center justify-center
-                  group-hover:scale-110 transition">
+                                <div className="w-14 h-14 rounded-full bg-orange-100 text-orange-600 ring-4 ring-orange-100/40 flex items-center justify-center group-hover:scale-110 transition">
                                     <BrainCircuit size={26} />
                                 </div>
-
-                                <h3 className="mt-6 text-lg font-semibold text-slate-900">
-                                    AI-Driven Software Development
-                                </h3>
-
+                                <h3 className="mt-6 text-lg font-semibold text-slate-900">AI-Driven Software Development</h3>
                                 <p className="mt-3 text-sm leading-relaxed text-slate-600 text-justify">
                                     Intelligent software solutions powered by AI, automation,
                                     and data-driven insights to accelerate business growth.
@@ -92,33 +124,14 @@ export default function WhatWeDo() {
                         </div>
 
                         {/* CARD 3 */}
-                        <div className="group relative bg-white rounded-2xl p-8
-              border border-slate-200
-              shadow-sm hover:shadow-xl
-              hover:-translate-y-1
-              transition-all duration-300">
-
-                            <div className="absolute left-0 top-6 bottom-6 w-[3px]
-                bg-gradient-to-b from-sky-400/40 to-transparent
-                rounded-full" />
-
-                            <div className="absolute inset-0 rounded-2xl opacity-0
-                group-hover:opacity-100 transition
-                bg-gradient-to-br from-sky-50 via-transparent to-transparent" />
-
+                        <div className="group relative bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-gradient-to-b from-sky-400/40 to-transparent rounded-full" />
+                            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-sky-50 via-transparent to-transparent" />
                             <div className="relative">
-                                <div className="w-14 h-14 rounded-full
-                  bg-sky-100 text-sky-600
-                  ring-4 ring-sky-100/40
-                  flex items-center justify-center
-                  group-hover:scale-110 transition">
+                                <div className="w-14 h-14 rounded-full bg-sky-100 text-sky-600 ring-4 ring-sky-100/40 flex items-center justify-center group-hover:scale-110 transition">
                                     <Smartphone size={26} />
                                 </div>
-
-                                <h3 className="mt-6 text-lg font-semibold text-slate-900">
-                                    Mobile Applications
-                                </h3>
-
+                                <h3 className="mt-6 text-lg font-semibold text-slate-900">Mobile Applications</h3>
                                 <p className="mt-3 text-sm leading-relaxed text-slate-600 text-justify">
                                     User-friendly Android and iOS applications that enhance
                                     engagement and deliver seamless experiences.
@@ -127,33 +140,14 @@ export default function WhatWeDo() {
                         </div>
 
                         {/* CARD 4 */}
-                        <div className="group relative bg-white rounded-2xl p-8
-              border border-slate-200
-              shadow-sm hover:shadow-xl
-              hover:-translate-y-1
-              transition-all duration-300">
-
-                            <div className="absolute left-0 top-6 bottom-6 w-[3px]
-                bg-gradient-to-b from-green-400/40 to-transparent
-                rounded-full" />
-
-                            <div className="absolute inset-0 rounded-2xl opacity-0
-                group-hover:opacity-100 transition
-                bg-gradient-to-br from-green-50 via-transparent to-transparent" />
-
+                        <div className="group relative bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-gradient-to-b from-green-400/40 to-transparent rounded-full" />
+                            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-green-50 via-transparent to-transparent" />
                             <div className="relative">
-                                <div className="w-14 h-14 rounded-full
-                  bg-green-100 text-green-600
-                  ring-4 ring-green-100/40
-                  flex items-center justify-center
-                  group-hover:scale-110 transition">
+                                <div className="w-14 h-14 rounded-full bg-green-100 text-green-600 ring-4 ring-green-100/40 flex items-center justify-center group-hover:scale-110 transition">
                                     <Megaphone size={26} />
                                 </div>
-
-                                <h3 className="mt-6 text-lg font-semibold text-slate-900">
-                                    Digital Marketing
-                                </h3>
-
+                                <h3 className="mt-6 text-lg font-semibold text-slate-900">Digital Marketing</h3>
                                 <p className="mt-3 text-sm leading-relaxed text-slate-600 text-justify">
                                     SEO, performance marketing, and digital strategies that
                                     increase visibility, traffic, and conversions.
@@ -168,53 +162,37 @@ export default function WhatWeDo() {
                 <div className="lg:col-span-1">
                     <div className="sticky top-24 bg-gradient-to-br from-pink-500 via-orange-400 to-sky-500 rounded-2xl p-8 text-white shadow-xl">
 
-                        <h3 className="text-2xl font-semibold">
-                            Get Instant Quote
-                        </h3>
+                        <h3 className="text-2xl font-semibold">Get Instant Quote</h3>
 
-                        <form className="mt-8 space-y-5">
-                            <input
-                                type="text"
-                                placeholder="Your Name*"
-                                className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none"
-                            />
-                            <input
-                                type="email"
-                                placeholder="Email Address*"
-                                className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none"
-                            />
-                            <input
-                                type="text"
-                                placeholder="Company"
-                                className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none"
-                            />
-                            <input
-                                type="text"
-                                placeholder="Mobile No*"
-                                className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none"
-                            />
-                            <select
-                                className="w-full bg-transparent border-b border-white/50 text-white py-2 focus:outline-none"
-                            >
-                                <option className="text-slate-900">Select Service</option>
-                                <option className="text-slate-900">Web Development</option>
-                                <option className="text-slate-900">AI Solutions</option>
-                                <option className="text-slate-900">UI/UX Design</option>
-                                <option className="text-slate-900">Digital Marketing</option>
+                        <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
+
+                            <input name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Your Name*" className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none" />
+
+                            <input name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Email Address*" className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none" />
+
+                            <input name="company" value={formData.company} onChange={handleChange} type="text" placeholder="Company" className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none" />
+
+                            <input name="mobile" value={formData.mobile} onChange={handleChange} type="text" placeholder="Mobile No*" className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none" />
+
+                            <select name="service" value={formData.service} onChange={handleChange} className="w-full bg-transparent border-b border-white/50 text-white py-2 focus:outline-none">
+                                <option value="">Select Service</option>
+                                <option>Web Development</option>
+                                <option>AI Solutions</option>
+                                <option>UI/UX Design</option>
+                                <option>Digital Marketing</option>
                             </select>
-                            <textarea
-                                placeholder="Comments"
-                                className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none"
-                            />
 
-                            <button
-                                type="submit"
-                                className="w-full mt-6 bg-white text-slate-900 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition"
-                            >
-                                Submit Request
+                            <textarea name="comments" value={formData.comments} onChange={handleChange} placeholder="Comments" className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none" />
+
+                            <button type="submit" disabled={loading} className="w-full mt-6 bg-white text-slate-900 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition">
+                                {loading ? "Submitting..." : "Submit Request"}
                             </button>
-                        </form>
 
+                            {message && (
+                                <p className="text-center text-green-200 mt-3">{message}</p>
+                            )}
+
+                        </form>
                     </div>
                 </div>
 

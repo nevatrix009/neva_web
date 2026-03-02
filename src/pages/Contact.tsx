@@ -2,8 +2,63 @@
 
 import Image from "next/image";
 import { Mail, Briefcase, Phone } from "lucide-react";
+import { useState } from "react";
 
 export default function ContactPage() {
+
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        country: "",
+        message: "",
+    });
+
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+
+    const handleChange = (e: any) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        setLoading(true);
+        setSuccess(false);
+
+        try {
+            const res = await fetch("/api/contacts", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(form),
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                setSuccess(true);
+                setForm({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    service: "",
+                    country: "",
+                    message: "",
+                });
+            }
+        } catch (err) {
+            alert("Failed to send message");
+        }
+
+        setLoading(false);
+    };
+
+
+
+
     return (
         <>
             {/* ========================= */}
@@ -149,7 +204,7 @@ export default function ContactPage() {
                                 Let’s talk about your project
                             </h2>
 
-                            <form className="space-y-6">
+                            <form className="space-y-6" onSubmit={handleSubmit}>
 
                                 {/* NAME */}
                                 <div>
@@ -166,6 +221,7 @@ export default function ContactPage() {
                                         transition-all duration-300
                                         focus:outline-none focus:bg-white
                                         focus:border-nevBlue focus:ring-2 focus:ring-nevBlue/30"
+                                        name="name" value={form.name} onChange={handleChange}
                                     />
                                 </div>
 
@@ -184,6 +240,7 @@ export default function ContactPage() {
                                         transition-all duration-300
                                         focus:outline-none focus:bg-white
                                         focus:border-nevPink focus:ring-2 focus:ring-nevPink/30"
+                                        name="email" value={form.email} onChange={handleChange}
                                     />
                                 </div>
 
@@ -202,6 +259,8 @@ export default function ContactPage() {
                                         transition-all duration-300
                                         focus:outline-none focus:bg-white
                                         focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/30"
+                                        name="phone" value={form.phone} onChange={handleChange}
+                                        pattern="^\+?[0-9\s]{8,15}$"
                                     />
                                 </div>
 
@@ -211,6 +270,7 @@ export default function ContactPage() {
                                         Service
                                     </label>
                                     <select
+                                        name="service" value={form.service} onChange={handleChange}
                                         className="w-full rounded-lg
                                         bg-slate-50 border border-slate-300
                                         px-4 py-3
@@ -233,6 +293,7 @@ export default function ContactPage() {
                                         Country
                                     </label>
                                     <select
+                                        name="country" value={form.country} onChange={handleChange}
                                         className="w-full rounded-lg
                                         bg-slate-50 border border-slate-300
                                         px-4 py-3
@@ -254,6 +315,7 @@ export default function ContactPage() {
                                         Message
                                     </label>
                                     <textarea
+                                        name="message" value={form.message} onChange={handleChange}
                                         rows={4}
                                         placeholder="Tell us about your project…"
                                         className="w-full rounded-lg
@@ -268,6 +330,7 @@ export default function ContactPage() {
                                 {/* SUBMIT */}
                                 <button
                                     type="submit"
+                                    disabled={loading}
                                     className="w-full md:w-auto
                                     bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600
                                     text-white px-8 py-3 rounded-lg font-medium
@@ -275,9 +338,13 @@ export default function ContactPage() {
                                     hover:shadow-xl hover:scale-[1.02]
                                     focus:outline-none focus:ring-2 focus:ring-purple-500/40"
                                 >
-                                    Submit Request
+                                    {loading ? "Sending..." : "Submit Request"}
                                 </button>
-
+                                {success && (
+                                    <p className="text-green-600 font-medium text-center">
+                                        ✅ Message sent successfully! We will contact you soon.
+                                    </p>
+                                )}
                             </form>
 
                         </div>

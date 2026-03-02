@@ -103,7 +103,7 @@ export default function Navbar() {
                     {/* Contact */}
                     <li>
                         <Link
-                            href="/contact"
+                            href="/Contact"
                             className="flex items-center gap-2 px-5 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md hover:shadow-xl hover:scale-105 transition"
                         >
                             <EnvelopeIcon className="w-5 h-5" />
@@ -211,7 +211,7 @@ export default function Navbar() {
                         {/* Contact */}
                         <li className="pt-4 border-t border-gray-200 mt-2">
                             <Link
-                                href="/contact"
+                                href="/Contact"
                                 onClick={()=>setMobileOpen(false)}
                                 className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white"
                             >
