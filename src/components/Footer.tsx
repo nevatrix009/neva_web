@@ -25,16 +25,11 @@ export default function Footer() {
 
                 {/* SOCIAL ICONS */}
                 <div className="flex justify-center gap-6 mb-12">
-                    <Link href="#" aria-label="Facebook" className="hover:text-slate-900 transition">
-                        <Facebook size={20} />
-                    </Link>
-                    <Link href="#" aria-label="Twitter" className="hover:text-slate-900 transition">
-                        <Twitter size={20} />
-                    </Link>
+
                     <Link href="#" aria-label="Instagram" className="hover:text-slate-900 transition">
                         <Instagram size={20} />
                     </Link>
-                    <Link href="#" aria-label="LinkedIn" className="hover:text-slate-900 transition">
+                    <Link href="https://www.linkedin.com/company/nevatrix/" aria-label="LinkedIn" className="hover:text-slate-900 transition">
                         <Linkedin size={20} />
                     </Link>
                 </div>

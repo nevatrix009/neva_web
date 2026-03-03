@@ -20,16 +20,10 @@ export default function TopBar() {
 
                 {/* Right: Social Icons */}
                 <div className="flex items-center gap-4">
-                    <Link href="#" aria-label="Facebook">
-                        <Facebook size={16} />
-                    </Link>
-                    <Link href="#" aria-label="Twitter">
-                        <Twitter size={16} />
-                    </Link>
                     <Link href="#" aria-label="Instagram">
                         <Instagram size={16} />
                     </Link>
-                    <Link href="#" aria-label="LinkedIn">
+                    <Link href="https://www.linkedin.com/company/nevatrix/" aria-label="LinkedIn">
                         <Linkedin size={16} />
                     </Link>
                 </div>
