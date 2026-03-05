@@ -30,14 +30,66 @@ export default function WhatWeDo() {
     const handleChange = (
         e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
     ) => {
+
+        const { name, value } = e.target;
+
+        // mobile number validation while typing
+        if (name === "mobile") {
+            if (!/^\d*$/.test(value)) return;
+            if (value.length > 10) return;
+        }
+
         setFormData((prev) => ({
             ...prev,
-            [e.target.name]: e.target.value,
+            [name]: value,
         }));
     };
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        /* ---------- VALIDATION ---------- */
+
+        if (!formData.name.trim()) {
+            setMessage("Name is required.");
+            return;
+        }
+
+        if (!/^[A-Za-z\s]+$/.test(formData.name)) {
+            setMessage("Name should contain only letters.");
+            return;
+        }
+
+        if (!formData.email.trim()) {
+            setMessage("Email is required.");
+            return;
+        }
+
+        if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+            setMessage("Please enter a valid email address.");
+            return;
+        }
+
+        if (!formData.company.trim()) {
+            setMessage("Company name is required.");
+            return;
+        }
+
+        if (!formData.mobile.trim()) {
+            setMessage("Mobile number is required.");
+            return;
+        }
+
+        if (!/^[0-9]{10}$/.test(formData.mobile)) {
+            setMessage("Mobile number must be exactly 10 digits.");
+            return;
+        }
+
+        if (!formData.service) {
+            setMessage("Please select a service.");
+            return;
+        }
+
         setLoading(true);
         setMessage("");
 
@@ -88,10 +140,8 @@ export default function WhatWeDo() {
                         build, scale, and grow with modern digital solutions.
                     </p>
 
-                    {/* SERVICES GRID */}
                     <div className="mt-14 grid md:grid-cols-2 gap-12">
 
-                        {/* CARD 1 */}
                         <div className="group relative bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                             <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-gradient-to-b from-pink-400/40 to-transparent rounded-full" />
                             <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-pink-50 via-transparent to-transparent" />
@@ -107,7 +157,6 @@ export default function WhatWeDo() {
                             </div>
                         </div>
 
-                        {/* CARD 2 */}
                         <div className="group relative bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                             <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-gradient-to-b from-orange-400/40 to-transparent rounded-full" />
                             <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-orange-50 via-transparent to-transparent" />
@@ -123,7 +172,6 @@ export default function WhatWeDo() {
                             </div>
                         </div>
 
-                        {/* CARD 3 */}
                         <div className="group relative bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                             <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-gradient-to-b from-sky-400/40 to-transparent rounded-full" />
                             <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-sky-50 via-transparent to-transparent" />
@@ -139,7 +187,6 @@ export default function WhatWeDo() {
                             </div>
                         </div>
 
-                        {/* CARD 4 */}
                         <div className="group relative bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                             <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-gradient-to-b from-green-400/40 to-transparent rounded-full" />
                             <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-green-50 via-transparent to-transparent" />
@@ -166,13 +213,13 @@ export default function WhatWeDo() {
 
                         <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
 
-                            <input name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Your Name*" className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none" />
+                            <input name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Your Name*" className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none"/>
 
-                            <input name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Email Address*" className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none" />
+                            <input name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Email Address*" className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none"/>
 
-                            <input name="company" value={formData.company} onChange={handleChange} type="text" placeholder="Company" className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none" />
+                            <input name="company" value={formData.company} onChange={handleChange} type="text" placeholder="Company" className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none"/>
 
-                            <input name="mobile" value={formData.mobile} onChange={handleChange} type="text" placeholder="Mobile No*" className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none" />
+                            <input name="mobile" value={formData.mobile} onChange={handleChange} type="text" placeholder="Mobile No*" className="w-full bg-transparent border-b border-white/50 placeholder-white/70 py-2 focus:outline-none"/>
 
                             <select name="service" value={formData.service} onChange={handleChange} className="w-full bg-transparent border-b border-white/50 text-white py-2 focus:outline-none">
                                 <option value="">Select Service</option>
