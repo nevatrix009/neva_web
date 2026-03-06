@@ -12,6 +12,7 @@ import {
     ShoppingCartIcon,
     MegaphoneIcon,
     EnvelopeIcon,
+    CommandLineIcon,
 } from "@heroicons/react/24/outline";
 
 export default function Navbar() {
@@ -85,6 +86,14 @@ export default function Navbar() {
                                     Full Stack Development
                                 </Link>
                             </li>
+
+                            <li>
+                                <Link href="/services/web-development" className="flex items-center gap-3 px-5 py-3 hover:bg-purple-100/50 rounded-lg">
+                                    <CommandLineIcon className="w-4 h-4 text-red-600" />
+                                    Web Development
+                                </Link>
+                            </li>
+
                             <li>
                                 <Link href="/services/mobile-app" className="flex items-center gap-3 px-5 py-3 hover:bg-purple-100/50 rounded-lg">
                                     <DevicePhoneMobileIcon className="w-4 h-4 text-green-600" />

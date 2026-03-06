@@ -6,7 +6,8 @@ export type PageSEO =
     | "digital-marketing"
     | "ecommerce"
     | "mobile-app-development"
-    | "full-stack-development";
+    | "full-stack-development"
+    | "web-development";
 
 export const SEO_DATA: Record<PageSEO, Metadata> = {
     "digital-marketing": {
@@ -93,6 +94,45 @@ export const SEO_DATA: Record<PageSEO, Metadata> = {
         },
     },
 
+    "web-development": {
+        title: "Web Development Company in India | Business Websites & Landing Pages - Nevatrix",
+        description:
+            "Nevatrix builds fast, SEO-optimised websites including business websites, landing pages and e-commerce stores using React, Next.js and modern web technologies.",
+        keywords: [
+            "web development company",
+            "business website development",
+            "landing page design",
+            "ecommerce website development",
+            "responsive web design",
+            "nextjs web development",
+        ],
+        openGraph: {
+            title: "Web Development Services - Nevatrix",
+            description:
+                "Fast, beautiful and conversion-focused websites built by Nevatrix.",
+            url: `${baseUrl}/services/web-development`,
+            siteName: "Nevatrix",
+            images: [
+                {
+                    url: "/web-development.jpg",
+                    width: 1200,
+                    height: 630,
+                    alt: "Nevatrix Web Development Services",
+                },
+            ],
+            type: "website",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: "Web Development Company - Nevatrix",
+            description:
+                "Professional websites and landing pages built for performance and conversions.",
+            images: ["/web-development.jpg"],
+        },
+        alternates: {
+            canonical: `${baseUrl}/services/web-development`,
+        },
+    },
 };
 
 export function getPageSEO(page: PageSEO): Metadata {
