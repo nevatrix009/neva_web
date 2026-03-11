@@ -1,11 +1,11 @@
-"use client";
-
 import Image from "next/image";
 import { ShieldCheck, Users, Cpu, TrendingUp } from "lucide-react";
+import SEO from "@/components/SEO";
 
 export default function AboutPage() {
     return (
         <>
+            <SEO page="about" />
             {/* ================= HERO ================= */}
 
             <section className="relative py-28 text-center text-white overflow-hidden">
