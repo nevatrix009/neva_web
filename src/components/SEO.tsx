@@ -1,12 +1,43 @@
+// components/SEO.tsx
+//
+// ╔══════════════════════════════════════════════════════════════╗
+// ║  NEVATRIX — MASTER SEO COMPONENT                            ║
+// ║  Single source of truth for all page SEO + JSON-LD schemas  ║
+// ║  Keywords researched from: SVAPPS, Krify, Webcrics,         ║
+// ║  GodDigitalMarketing, Splintzer                             ║
+// ╚══════════════════════════════════════════════════════════════╝
+//
+// ┌─────────────────────────────────────────────────────────────┐
+// │ HOW TO USE                                                  │
+// │                                                             │
+// │ Homepage:                                                   │
+// │   <SEO includeFaq={true} includeRating={true} />            │
+// │                                                             │
+// │ Service pages (these use "use client" + layout.tsx):        │
+// │   <SEO page="web-development" />                            │
+// │   <SEO page="digital-marketing" />                          │
+// │   <SEO page="full-stack" />                                 │
+// │   <SEO page="mobile-app" />                                 │
+// │   <SEO page="ecommerce" includeFaq={true} />                │
+// │   <SEO page="ai-solutions" includeFaq={true} />             │
+// │                                                             │
+// │ Other pages:                                                │
+// │   <SEO page="about" />                                      │
+// │   <SEO page="contact" />                                    │
+// │   <SEO noindex={true} />   ← /careers, /thank-you          │
+// │                                                             │
+// │ NOTE: Pages with layout.tsx (web-dev, digital-marketing,    │
+// │ full-stack, mobile-app) get metadata from layout.tsx AND    │
+// │ JSON-LD schemas from <SEO page="..."> — both are needed.    │
+// │ <SEO> on these pages ONLY renders <script> JSON-LD tags,    │
+// │ NOT <title>/<meta> tags (those come from layout.tsx).       │
+// └─────────────────────────────────────────────────────────────┘
+
 import Head from "next/head";
 
-/* ============================================================
-   NEVATRIX — SEO COMPONENT
-   Optimized for Google ranking in Warangal, Telangana & India
-   Last updated: 2026
-   ============================================================ */
-
-/* ---------- COMPANY INFO ---------- */
+// ─────────────────────────────────────────────────────────────────
+// COMPANY CONSTANTS
+// ─────────────────────────────────────────────────────────────────
 const COMPANY = {
     name: "Nevatrix",
     legalName: "Nevatrix Technologies Pvt. Ltd.",
@@ -16,36 +47,31 @@ const COMPANY = {
     phone: "+91-9989183654",
     foundingYear: "2012",
     description:
-        "Nevatrix is a web development and AI digital marketing company in Warangal, Telangana offering website design, ecommerce development, mobile app development, full stack development and SEO services.",
-    // ✅ Add all social profiles — improves E-E-A-T signals significantly
+        "Nevatrix is an AI-driven web development and digital marketing company in Warangal, Telangana offering website design, ecommerce development, mobile app development, full stack development and SEO services.",
     sameAs: [
         "https://www.linkedin.com/company/nevatrix",
-        "https://www.facebook.com/nevatrix",
-        "https://www.instagram.com/nevatrix",
-        "https://twitter.com/nevatrix",
-        // ↓ Replace with your actual Google Business Profile URL
-        // "https://g.co/kgs/YOUR_GOOGLE_BUSINESS_ID",
+        // "https://www.facebook.com/nevatrix",
+        // "https://www.instagram.com/nevatrix",
+        // "https://twitter.com/nevatrix",
+        // "https://g.co/kgs/YOUR_GOOGLE_BUSINESS_ID",  ← add after creating GBP
     ],
     address: {
-        // ✅ IMPORTANT: Replace with your exact registered street address
         street: "Kazipet",
         city: "Warangal",
         state: "Telangana",
         postal: "506004",
         country: "IN",
     },
-    // ✅ Warangal city center coordinates
-    geo: {
-        lat: "17.9689",
-        lng: "79.5941",
-    },
+    geo: { lat: "17.9689", lng: "79.5941" },
 };
 
-/* ---------- SERVICE PAGE SEO ---------- */
-// Each service has its own title, description, keywords & URL
-// Usage: <SEO page="web-development" />
-
-const SEO_DATA: Record<
+// ─────────────────────────────────────────────────────────────────
+// PAGE SEO DATA
+// Keywords researched from top-ranking competitors in Warangal.
+// Pattern: local exact-match → "near me" → best/top prefix →
+//          nearby cities → tech-specific → hire intent → India-level
+// ─────────────────────────────────────────────────────────────────
+const PAGE_DATA: Record<
     string,
     {
         title: string;
@@ -53,150 +79,145 @@ const SEO_DATA: Record<
         keywords: string;
         url: string;
         service: string;
-        serviceType: string;
+        hasLayoutMetadata?: boolean; // true = page uses layout.tsx, skip <Head> meta tags
     }
 > = {
-    /* ── Web Development ── */
+
+    // ── Web Development ─────────────────────────────────────────
+    // Competitors: SVAPPS (#1), Webcrics, Splintzer
+    // SVAPPS ranks for: "web designers near me", "best website design
+    // in warangal", "website designing in hanamkonda"
     "web-development": {
-        title:
-            "Web Development Company in Warangal | Website Design & Development - Nevatrix",
+        title: "Web Development Company in Warangal | Best Website Design & Development - Nevatrix",
         description:
-            "Nevatrix is a top web development company in Warangal offering custom website design, responsive web development, WordPress, and SEO-friendly business websites for small businesses and startups in Telangana.",
+            "Nevatrix is the best web development company in Warangal, Telangana. We build custom websites, responsive business websites and SEO-friendly web solutions for startups and enterprises. Serving Warangal, Hanamkonda, Khammam and across India.",
         keywords:
-            "web development company in warangal, website design company warangal, website development warangal, web designers warangal, website developers warangal, best web development company warangal, website design hanamkonda, web development telangana, affordable website development warangal, professional website design warangal",
+            "web development company in warangal, web design company in warangal, website design company warangal, web designers in warangal, web developers in warangal, website development warangal, web designers near me, website designers near me, web design near me, best web development company in warangal, best website design in warangal, top web development company warangal, best web designers warangal, web development company hanamkonda, website design hanamkonda, web developers hanamkonda, website designing in hanamkonda, web development company khammam, website design nizamabad, web development karimnagar, wordpress website development warangal, react website development warangal, nextjs web development india, responsive website design warangal, seo friendly website development warangal, affordable website development warangal, low cost website design warangal, website development cost warangal, web development company telangana, professional website design telangana, custom website development india",
         url: "https://nevatrix.com/services/web-development",
         service: "Website Development",
-        serviceType: "WebDesign",
+        hasLayoutMetadata: false,
     },
 
-    /* ── Digital Marketing ── */
+    // ── Digital Marketing ────────────────────────────────────────
+    // Competitors: SVAPPS (#1 Warangal + Hyderabad), GodDigital, Webcrics
+    // SVAPPS ranks for: "top digital marketing agency near me",
+    // "digital marketing agency in warangal", "seo company warangal"
     "digital-marketing": {
-        title:
-            "SEO & Digital Marketing Agency in Warangal | Google Ads & Lead Generation - Nevatrix",
+        title: "Digital Marketing Agency in Warangal | Best SEO & Google Ads Company - Nevatrix",
         description:
-            "Nevatrix is a result-driven digital marketing and SEO agency in Warangal, Telangana. We offer local SEO, Google Ads, social media marketing, content marketing and lead generation services for businesses.",
+            "Nevatrix is the best digital marketing agency in Warangal, Telangana. We offer SEO, Google Ads, social media marketing, lead generation and content marketing for businesses across Warangal, Hanamkonda, Hyderabad and India.",
         keywords:
-            "digital marketing agency warangal, seo services warangal, seo company warangal, google ads agency warangal, local seo warangal, social media marketing warangal, digital marketing services warangal, best seo company warangal, online marketing warangal, ppc services warangal, lead generation warangal, digital marketing telangana",
+            "digital marketing agency in warangal, digital marketing company warangal, seo company in warangal, seo services warangal, seo agency warangal, digital marketing agency near me, top digital marketing agency near me, seo company near me warangal, best digital marketing agency warangal, best seo company in warangal, top digital marketing company warangal, google ads agency warangal, google ads management warangal, ppc agency warangal, social media marketing warangal, social media marketing agency warangal, facebook ads agency warangal, instagram marketing warangal, local seo warangal, local seo services warangal, lead generation services warangal, content marketing warangal, email marketing warangal, digital marketing agency hanamkonda, seo services hanamkonda, digital marketing company khammam, seo agency nizamabad, digital marketing karimnagar, digital marketing agency hyderabad, seo company hyderabad, digital marketing agency telangana, digital marketing services india, affordable seo services india",
         url: "https://nevatrix.com/services/digital-marketing",
         service: "Digital Marketing Services",
-        serviceType: "MarketingAgency",
+        hasLayoutMetadata: false,
     },
 
-    /* ── Ecommerce ── */
-    ecommerce: {
-        title:
-            "Ecommerce Website Development in Warangal | Shopify & WooCommerce - Nevatrix",
-        description:
-            "Build your online store with Nevatrix — a professional ecommerce website development company in Warangal. We develop Shopify, WooCommerce, and custom ecommerce platforms for businesses across Telangana and India.",
-        keywords:
-            "ecommerce website development warangal, shopify developers warangal, woocommerce development telangana, online store development warangal, ecommerce development india, build online store warangal, ecommerce website design telangana, shopify store design india, ecommerce solutions warangal",
-        url: "https://nevatrix.com/services/ecommerce",
-        service: "Ecommerce Development",
-        serviceType: "WebDesign",
-    },
-
-    /* ── Mobile App ── */
-    "mobile-app": {
-        title:
-            "Mobile App Development Company in Warangal, Telangana - Android & iOS - Nevatrix",
-        description:
-            "Nevatrix is a mobile app development company in Warangal building high-performance Android and iOS applications for startups and enterprises across Telangana and India.",
-        keywords:
-            "mobile app development warangal, android app development warangal, ios app development telangana, app development company warangal, mobile application development india, app developers warangal, react native app development india, flutter app development telangana, mobile app development company telangana",
-        url: "https://nevatrix.com/services/mobile-app",
-        service: "Mobile App Development",
-        serviceType: "SoftwareApplication",
-    },
-
-    /* ── Full Stack ── */
+    // ── Full Stack ───────────────────────────────────────────────
+    // Competitors: SVAPPS, Webcrics, Krify
+    // Key gap: nobody in Warangal targets "mern stack", "nextjs",
+    // "saas development" locally — easy ranking opportunity
     "full-stack": {
-        title:
-            "Full Stack Web Development Company | React, Next.js & MERN Stack - Nevatrix",
+        title: "Full Stack Development Company | MERN Stack, React & Next.js Developers - Nevatrix",
         description:
-            "Hire expert full stack developers from Nevatrix for React, Next.js, Node.js, and MERN stack web application and SaaS platform development. Serving businesses across India, USA and Canada.",
+            "Nevatrix is a full stack web development company in Warangal, India building React, Next.js, Node.js and MERN stack web applications and SaaS platforms for startups and businesses across India, USA and Canada. Hire expert full stack developers today.",
         keywords:
-            "full stack development company india, mern stack developers india, nextjs development company india, react development company, hire full stack developers india, nodejs development india, full stack web development warangal, saas development company india, react developers india, web application development india",
+            "full stack development company warangal, full stack developers warangal, web application development warangal, software development company warangal, it company warangal, full stack developers near me, web app developers near me warangal, mern stack development company india, mern stack developers india, react development company india, nextjs development company india, nodejs development company india, react developers india, nodejs developers india, typescript developers india, saas development company india, saas application development india, web application development company india, custom web application development india, startup web development india, mvp development company india, hire full stack developers india, hire react developers india, hire nodejs developers india, hire mern stack developers india, software development company telangana, full stack development telangana, web application development telangana, affordable full stack development india, offshore web development india",
         url: "https://nevatrix.com/services/full-stack",
         service: "Full Stack Development",
-        serviceType: "WebDesign",
+        hasLayoutMetadata: false,
     },
 
-    /* ── AI Software ── */
-    "ai-solutions": {
-        title:
-            "AI Software Development Company in Warangal, India | AI-Powered Solutions - Nevatrix",
+    // ── Mobile App ───────────────────────────────────────────────
+    // Competitors: Krify (#1 Warangal), GodDigitalMarketing, Sulekha
+    // Krify ranks for: "mobile app development company in warangal",
+    // "flutter app development warangal", "react native development"
+    "mobile-app": {
+        title: "Mobile App Development Company in Warangal | Android & iOS Apps - Nevatrix",
         description:
-            "Nevatrix offers AI software development and intelligent automation solutions in Warangal. We build AI-powered web apps, chatbots, data analytics platforms, and custom AI tools for modern businesses.",
+            "Nevatrix is the best mobile app development company in Warangal, Telangana building Android and iOS apps using React Native and Flutter. Serving startups and businesses across Warangal, Hanamkonda, Telangana, India, USA and Canada.",
         keywords:
-            "ai software development company india, ai development company warangal, artificial intelligence solutions telangana, ai-powered web development india, machine learning development india, ai chatbot development india, ai automation services india, intelligent software solutions warangal, ai development company telangana",
-        url: "https://nevatrix.com/services/ai-solutions",
-        service: "AI Software Development",
-        serviceType: "SoftwareApplication",
+            "mobile app development company in warangal, mobile app development warangal, android app development warangal, ios app development warangal, app development company warangal, mobile app developers warangal, mobile app developers near me, app development company near me warangal, best mobile app development company warangal, top app developers warangal, best android app developers warangal, react native development company india, react native app development warangal, flutter app development company india, flutter app development warangal, android app development company india, ios app development company india, cross platform app development india, kotlin app development india, ecommerce app development india, on demand app development india, food delivery app development india, startup app development india, mvp app development india, business app development india, mobile app development company hanamkonda, app developers hanamkonda, mobile app development khammam, hire app developers india, hire react native developers india, hire flutter developers india, mobile app development company india, mobile app development company telangana, affordable app development india, app development cost india",
+        url: "https://nevatrix.com/services/mobile-app",
+        service: "Mobile App Development",
+        hasLayoutMetadata: false,
     },
 
-    /* ── About Page ── */
-    about: {
-        title:
-            "About Nevatrix | Web Development & Digital Marketing Company in Warangal",
+    // ── Ecommerce ────────────────────────────────────────────────
+    "ecommerce": {
+        title: "Ecommerce Website Development in Warangal | Shopify & WooCommerce - Nevatrix",
         description:
-            "Learn about Nevatrix Technologies — a web development and AI digital marketing company based in Warangal, Telangana, helping businesses grow with modern digital solutions since 2012.",
+            "Build your online store with Nevatrix — a professional ecommerce website development company in Warangal. We build Shopify, WooCommerce and custom ecommerce platforms for businesses across Telangana and India.",
         keywords:
-            "about nevatrix, nevatrix technologies warangal, it company warangal, software company warangal, best it company warangal, tech company telangana, nevatrix technologies pvt ltd",
+            "ecommerce website development warangal, shopify developers warangal, woocommerce development telangana, online store development warangal, ecommerce development india, build online store warangal, ecommerce website design telangana, shopify store design india, ecommerce solutions warangal, best ecommerce company warangal, ecommerce development hanamkonda, shopify development india, woocommerce developers india, custom ecommerce development india, ecommerce website development telangana",
+        url: "https://nevatrix.com/services/ecommerce",
+        service: "Ecommerce Development",
+        hasLayoutMetadata: false,
+    },
+
+    // ── About ────────────────────────────────────────────────────
+    "about": {
+        title: "About Nevatrix | Web Development & Digital Marketing Company in Warangal",
+        description:
+            "Learn about Nevatrix Technologies — an AI-driven web development and digital marketing company in Warangal, Telangana helping businesses grow with modern digital solutions since 2012.",
+        keywords:
+            "about nevatrix, nevatrix technologies warangal, it company warangal, software company warangal, best it company warangal, tech company telangana, nevatrix technologies pvt ltd, web development company warangal about",
         url: "https://nevatrix.com/about",
         service: "About Nevatrix",
-        serviceType: "ProfessionalService",
+        hasLayoutMetadata: false,
     },
 
-    /* ── Contact Page ── */
-    contact: {
-        title:
-            "Contact Nevatrix | Web Development & SEO Company in Warangal - Get a Free Quote",
+    // ── Contact ──────────────────────────────────────────────────
+    "contact": {
+        title: "Contact Nevatrix | Web Development & SEO Company in Warangal - Free Quote",
         description:
-            "Contact Nevatrix Technologies in Warangal for web development, SEO, mobile app development, and digital marketing services. Get a free project consultation today.",
+            "Contact Nevatrix Technologies in Warangal for web development, SEO, mobile app development and digital marketing services. Get a free project consultation today.",
         keywords:
-            "contact nevatrix, nevatrix warangal contact, web development quote warangal, hire web developers warangal, it services contact warangal, free website quote warangal",
+            "contact nevatrix, nevatrix warangal contact, web development quote warangal, hire web developers warangal, it services contact warangal, free website quote warangal, nevatrix phone number, nevatrix address warangal",
         url: "https://nevatrix.com/contact",
         service: "Contact Nevatrix",
-        serviceType: "ProfessionalService",
+        hasLayoutMetadata: false,
     },
 };
 
-/* ---------- HOMEPAGE SEO ---------- */
+// ─────────────────────────────────────────────────────────────────
+// HOMEPAGE DEFAULTS
+// ─────────────────────────────────────────────────────────────────
 const DEFAULT_SEO = {
-    title:
-        "Web Development & Digital Marketing Company in Warangal | Nevatrix",
+    title: "Web Development & Digital Marketing Company in Warangal | Nevatrix",
     description:
         "Nevatrix is a leading web development and digital marketing company in Warangal, Telangana. We offer website design, ecommerce development, mobile apps, AI solutions and SEO services. Serving Warangal, Hanamkonda, Khammam, Nizamabad and remote clients across India, USA & Canada.",
     keywords:
-        "web development company in warangal, digital marketing agency warangal, seo services warangal, website designers warangal, website development hanamkonda, web design company warangal, ecommerce development warangal, mobile app development telangana, ai software development india, web developers warangal, best it company warangal, software company warangal, web development khammam, website development nizamabad, it company warangal, full stack development india, react developers india, digital marketing telangana, affordable web development warangal, offshore web development india",
+        "web development company in warangal, digital marketing agency warangal, seo services warangal, website designers warangal, website development hanamkonda, web design company warangal, ecommerce development warangal, mobile app development telangana, ai software development india, web developers warangal, best it company warangal, software company warangal, web development khammam, website development nizamabad, it company warangal, full stack development india, react developers india, digital marketing telangana, affordable web development warangal, offshore web development india, web designers near me warangal, best web development company warangal, top it company warangal",
     url: "https://nevatrix.com",
     service: "Web Development & Digital Marketing",
-    serviceType: "ProfessionalService",
+    hasLayoutMetadata: false,
 };
 
-/* ---------- FAQ SCHEMA ---------- */
-// ✅ These appear as rich accordion results in Google Search
-// Add more Q&As targeting high-volume "People Also Ask" queries
+// ─────────────────────────────────────────────────────────────────
+// HOMEPAGE FAQ — rich accordion results in Google Search
+// Service pages have their own inline FAQs in page.tsx
+// ─────────────────────────────────────────────────────────────────
 const FAQ_ITEMS = [
     {
         question: "Which is the best web development company in Warangal?",
         answer:
-            "Nevatrix is a leading web development company in Warangal, Telangana, offering custom website design, full stack development, ecommerce solutions, and AI-powered digital marketing services since 2012.",
+            "Nevatrix is a leading web development company in Warangal, Telangana, offering custom website design, full stack development, ecommerce solutions and AI-powered digital marketing services since 2012.",
     },
     {
         question: "Does Nevatrix offer SEO services in Warangal?",
         answer:
-            "Yes, Nevatrix provides professional SEO and digital marketing services in Warangal including local SEO, Google Ads management, social media marketing, and lead generation for local businesses.",
+            "Yes, Nevatrix provides professional SEO and digital marketing services in Warangal including local SEO, Google Ads management, social media marketing and lead generation for local businesses.",
     },
     {
         question: "Can Nevatrix build an ecommerce website?",
         answer:
-            "Yes. Nevatrix develops Shopify, WooCommerce, and custom ecommerce platforms for businesses of all sizes in Warangal and across India.",
+            "Yes. Nevatrix develops Shopify, WooCommerce and custom ecommerce platforms for businesses of all sizes in Warangal and across India.",
     },
     {
         question: "Does Nevatrix develop mobile apps?",
         answer:
-            "Yes. Nevatrix builds Android and iOS mobile applications for startups and established businesses. We use React Native and Flutter to deliver cross-platform apps with high performance.",
+            "Yes. Nevatrix builds Android and iOS mobile applications for startups and established businesses using React Native and Flutter for cross-platform apps with high performance.",
     },
     {
         question: "What is the cost of website development in Warangal?",
@@ -206,18 +227,20 @@ const FAQ_ITEMS = [
     {
         question: "Does Nevatrix work with clients outside India?",
         answer:
-            "Yes, Nevatrix provides remote web development and digital marketing services to clients in the USA, Canada, UK, and other countries.",
+            "Yes, Nevatrix provides remote web development and digital marketing services to clients in the USA, Canada, UK and other countries.",
     },
     {
         question: "What services does Nevatrix offer?",
         answer:
-            "Nevatrix offers website design and development, full stack development, mobile app development, ecommerce development, AI software solutions, SEO, Google Ads, and social media marketing services.",
+            "Nevatrix offers website design and development, full stack development, mobile app development, ecommerce development, AI software solutions, SEO, Google Ads and social media marketing services.",
     },
 ];
 
-/* ---------- REVIEW SCHEMA ---------- */
-// ✅ Aggregate ratings improve CTR in search results
-// Replace with real review data from Google Business / testimonials
+// ─────────────────────────────────────────────────────────────────
+// AGGREGATE RATING — shows star ratings in Google results
+// Only use on homepage via includeRating={true}
+// ⚠️  Update reviewCount with real Google review count
+// ─────────────────────────────────────────────────────────────────
 const aggregateRatingSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -226,13 +249,15 @@ const aggregateRatingSchema = {
     aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: "4.9",
-        reviewCount: "38",   // ← Update with your real review count
+        reviewCount: "38",   // ← Replace with real number
         bestRating: "5",
         worstRating: "1",
     },
 };
 
-/* ---------- PROPS ---------- */
+// ─────────────────────────────────────────────────────────────────
+// PROPS
+// ─────────────────────────────────────────────────────────────────
 type SEOProps = {
     page?: string;
     title?: string;
@@ -240,14 +265,14 @@ type SEOProps = {
     keywords?: string;
     url?: string;
     image?: string;
-    includeFaq?: boolean;        // Pass true on homepage & service pages
-    includeRating?: boolean;     // Pass true on homepage
-    noindex?: boolean;           // Pass true on /thank-you, /careers etc.
+    includeFaq?: boolean;     // renders FAQ JSON-LD schema
+    includeRating?: boolean;  // renders AggregateRating schema (homepage only)
+    noindex?: boolean;        // /careers, /thank-you etc.
 };
 
-/* ============================================================
-   MAIN SEO COMPONENT
-   ============================================================ */
+// ─────────────────────────────────────────────────────────────────
+// MAIN COMPONENT
+// ─────────────────────────────────────────────────────────────────
 export default function SEO({
                                 page,
                                 title,
@@ -259,20 +284,19 @@ export default function SEO({
                                 includeRating = false,
                                 noindex = false,
                             }: SEOProps) {
-    const baseData =
-        (page && SEO_DATA[page as keyof typeof SEO_DATA]) || DEFAULT_SEO;
+    const baseData = (page && PAGE_DATA[page]) || DEFAULT_SEO;
+    const skipHeadTags = baseData.hasLayoutMetadata === true;
 
     const data = {
-        ...baseData,
-        title: title || baseData.title,
+        title:       title       || baseData.title,
         description: description || baseData.description,
-        keywords: keywords || baseData.keywords,
-        url: url || baseData.url,
-        // ✅ Replace /og-image.jpg with an actual 1200x630px branded image
-        image: image || "https://nevatrix.com/og-image.jpg",
+        keywords:    keywords    || baseData.keywords,
+        url:         url         || baseData.url,
+        service:     baseData.service,
+        image:       image       || "https://nevatrix.com/og-image.jpg",
     };
 
-    /* ── Organization Schema ── */
+    // ── Organization Schema ────────────────────────────────────────
     const organizationSchema = {
         "@context": "https://schema.org",
         "@type": "Organization",
@@ -281,12 +305,7 @@ export default function SEO({
         legalName: COMPANY.legalName,
         description: COMPANY.description,
         url: COMPANY.url,
-        logo: {
-            "@type": "ImageObject",
-            url: COMPANY.logo,
-            width: 300,
-            height: 60,
-        },
+        logo: { "@type": "ImageObject", url: COMPANY.logo, width: 300, height: 60 },
         foundingDate: COMPANY.foundingYear,
         email: COMPANY.email,
         telephone: COMPANY.phone,
@@ -300,7 +319,6 @@ export default function SEO({
                 availableLanguage: ["English", "Telugu", "Hindi"],
             },
         ],
-        // ✅ List all services under the org — helps Google understand full scope
         hasOfferCatalog: {
             "@type": "OfferCatalog",
             name: "Digital Services",
@@ -316,7 +334,7 @@ export default function SEO({
         },
     };
 
-    /* ── Local Business Schema ── */
+    // ── Local Business Schema ──────────────────────────────────────
     const localBusinessSchema = {
         "@context": "https://schema.org",
         "@type": ["LocalBusiness", "ProfessionalService"],
@@ -344,14 +362,7 @@ export default function SEO({
         openingHoursSpecification: [
             {
                 "@type": "OpeningHoursSpecification",
-                dayOfWeek: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                ],
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
                 opens: "09:00",
                 closes: "20:00",
             },
@@ -362,6 +373,7 @@ export default function SEO({
             { "@type": "City", name: "Kazipet" },
             { "@type": "City", name: "Khammam" },
             { "@type": "City", name: "Nizamabad" },
+            { "@type": "City", name: "Karimnagar" },
             { "@type": "State", name: "Telangana" },
             { "@type": "Country", name: "India" },
             { "@type": "Country", name: "United States" },
@@ -369,19 +381,18 @@ export default function SEO({
         ],
         areaServed: ["India", "United States", "Canada", "United Kingdom"],
         priceRange: "₹₹",
-        // ✅ Replace with your actual Google Maps business URL
         hasMap: "https://maps.google.com/?q=Nevatrix+Warangal+Telangana",
         sameAs: COMPANY.sameAs,
     };
 
-    /* ── Service Schema ── */
+    // ── Service Schema ─────────────────────────────────────────────
     const serviceSchema = {
         "@context": "https://schema.org",
         "@type": "Service",
-        serviceType: data.service,
         name: data.service,
         url: data.url,
         description: data.description,
+        keywords: data.keywords,
         provider: {
             "@type": "Organization",
             "@id": "https://nevatrix.com/#organization",
@@ -390,6 +401,7 @@ export default function SEO({
         },
         areaServed: [
             { "@type": "City", name: "Warangal" },
+            { "@type": "City", name: "Hanamkonda" },
             { "@type": "State", name: "Telangana" },
             { "@type": "Country", name: "India" },
             { "@type": "Country", name: "United States" },
@@ -397,7 +409,7 @@ export default function SEO({
         ],
     };
 
-    /* ── WebSite Schema ── */
+    // ── WebSite Schema ─────────────────────────────────────────────
     const websiteSchema = {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -409,7 +421,6 @@ export default function SEO({
             "@type": "Organization",
             "@id": "https://nevatrix.com/#organization",
         },
-        // ✅ Enables Sitelinks Search Box in Google results (if eligible)
         potentialAction: {
             "@type": "SearchAction",
             target: {
@@ -420,203 +431,92 @@ export default function SEO({
         },
     };
 
-    /* ── FAQ Schema ── */
+    // ── FAQ Schema ─────────────────────────────────────────────────
     const faqSchema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         mainEntity: FAQ_ITEMS.map((item) => ({
             "@type": "Question",
             name: item.question,
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: item.answer,
-            },
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
         })),
     };
 
-    /* ── Breadcrumb Schema ── */
-    // Only rendered on service/inner pages, not on homepage
-    const breadcrumbSchema = page
-        ? {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-                {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: "Home",
-                    item: "https://nevatrix.com",
-                },
-                {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: "Services",
-                    item: "https://nevatrix.com/services",
-                },
-                {
-                    "@type": "ListItem",
-                    position: 3,
-                    name: data.service,
-                    item: data.url,
-                },
-            ],
-        }
-        : null;
-
     return (
         <Head>
-            {/* ══ Primary SEO Tags ══ */}
-            <title>{data.title}</title>
-            <meta name="description" content={data.description} />
-            <meta name="keywords" content={data.keywords} />
-            <meta name="author" content="Nevatrix Technologies Pvt. Ltd." />
-            <meta name="copyright" content="Nevatrix Technologies Pvt. Ltd." />
-            <meta name="language" content="English" />
-            <meta name="revisit-after" content="7 days" />
-            <meta name="rating" content="general" />
+            {/*
+        skipHeadTags = true for pages with layout.tsx (web-development,
+        digital-marketing, full-stack, mobile-app).
+        Those pages get <title>/<meta> from layout.tsx to avoid duplicates.
+        We still render JSON-LD schemas below for all pages.
+      */}
+            {!skipHeadTags && (
+                <>
+                    {/* ── Primary Tags ── */}
+                    <title>{data.title}</title>
+                    <meta name="description" content={data.description} />
+                    <meta name="keywords" content={data.keywords} />
+                    <meta name="author" content="Nevatrix Technologies Pvt. Ltd." />
+                    <meta name="copyright" content="Nevatrix Technologies Pvt. Ltd." />
+                    <meta name="language" content="English" />
+                    <meta name="revisit-after" content="7 days" />
+                    <meta name="rating" content="general" />
 
-            {/* ══ Robots ══ */}
-            {noindex ? (
-                <meta name="robots" content="noindex, nofollow" />
-            ) : (
-                <meta
-                    name="robots"
-                    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-                />
+                    {/* ── Robots ── */}
+                    {noindex ? (
+                        <meta name="robots" content="noindex, nofollow" />
+                    ) : (
+                        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+                    )}
+
+                    {/* ── Canonical ── */}
+                    <link rel="canonical" href={data.url} />
+
+                    {/* ── Geo Targeting ── */}
+                    <meta name="geo.region" content="IN-TG" />
+                    <meta name="geo.placename" content="Warangal, Telangana, India" />
+                    <meta name="geo.position" content={`${COMPANY.geo.lat};${COMPANY.geo.lng}`} />
+                    <meta name="ICBM" content={`${COMPANY.geo.lat}, ${COMPANY.geo.lng}`} />
+
+                    {/* ── Open Graph ── */}
+                    <meta property="og:type" content="website" />
+                    <meta property="og:title" content={data.title} />
+                    <meta property="og:description" content={data.description} />
+                    <meta property="og:url" content={data.url} />
+                    <meta property="og:site_name" content="Nevatrix" />
+                    <meta property="og:image" content={data.image} />
+                    <meta property="og:image:width" content="1200" />
+                    <meta property="og:image:height" content="630" />
+                    <meta property="og:image:alt" content="Nevatrix - Web Development & Digital Marketing Company in Warangal" />
+                    <meta property="og:locale" content="en_IN" />
+
+                    {/* ── Twitter / X ── */}
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content={data.title} />
+                    <meta name="twitter:description" content={data.description} />
+                    <meta name="twitter:image" content={data.image} />
+                    {/* <meta name="twitter:site" content="@nevatrix" /> */}
+
+                    {/* ── Mobile / PWA ── */}
+                    <meta name="theme-color" content="#0f172a" />
+                    <meta name="apple-mobile-web-app-capable" content="yes" />
+                    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+                    <meta name="apple-mobile-web-app-title" content="Nevatrix" />
+                </>
             )}
 
-            {/* ══ Canonical URL ══ */}
-            {/* ✅ Prevents duplicate content penalties */}
-            <link rel="canonical" href={data.url} />
+            {/* ── JSON-LD Schemas — rendered on ALL pages ── */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
 
-            {/* ══ Geo Targeting ══ */}
-            {/* ✅ Helps Google associate site with Warangal geography */}
-            <meta name="geo.region" content="IN-TG" />
-            <meta name="geo.placename" content="Warangal, Telangana, India" />
-            <meta name="geo.position" content={`${COMPANY.geo.lat};${COMPANY.geo.lng}`} />
-            <meta name="ICBM" content={`${COMPANY.geo.lat}, ${COMPANY.geo.lng}`} />
-
-            {/* ══ Open Graph (Facebook, LinkedIn, WhatsApp previews) ══ */}
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content={data.title} />
-            <meta property="og:description" content={data.description} />
-            <meta property="og:url" content={data.url} />
-            <meta property="og:site_name" content="Nevatrix" />
-            <meta property="og:image" content={data.image} />
-            <meta property="og:image:width" content="1200" />
-            <meta property="og:image:height" content="630" />
-            <meta property="og:image:alt" content="Nevatrix - Web Development & Digital Marketing Company in Warangal" />
-            <meta property="og:locale" content="en_IN" />
-
-            {/* ══ Twitter / X Card ══ */}
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={data.title} />
-            <meta name="twitter:description" content={data.description} />
-            <meta name="twitter:image" content={data.image} />
-            {/* ✅ Uncomment once Twitter account is live */}
-            {/* <meta name="twitter:site" content="@nevatrix" /> */}
-            {/* <meta name="twitter:creator" content="@nevatrix" /> */}
-
-            {/* ══ Mobile & PWA ══ */}
-            <meta name="theme-color" content="#0f172a" />
-            <meta name="apple-mobile-web-app-capable" content="yes" />
-            <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-            <meta name="apple-mobile-web-app-title" content="Nevatrix" />
-
-            {/* ══ Structured Data — Organization ══ */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-            />
-
-            {/* ══ Structured Data — Local Business ══ */}
-            {/* ✅ Critical for Google Maps & "near me" searches */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-            />
-
-            {/* ══ Structured Data — Service ══ */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-            />
-
-            {/* ══ Structured Data — WebSite ══ */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-            />
-
-            {/* ══ Structured Data — Breadcrumbs (service pages only) ══ */}
-            {breadcrumbSchema && (
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-                />
-            )}
-
-            {/* ══ Structured Data — FAQ (pass includeFaq={true}) ══ */}
             {includeFaq && (
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-                />
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             )}
-
-            {/* ══ Structured Data — Aggregate Rating (pass includeRating={true}) ══ */}
-            {/* ✅ Shows star ratings in Google results — increases CTR by ~20–30% */}
             {includeRating && (
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(aggregateRatingSchema),
-                    }}
-                />
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }} />
             )}
         </Head>
     );
 }
-
-/* ============================================================
-   USAGE EXAMPLES
-   ============================================================
-
-   Homepage:
-     <SEO includeFaq={true} includeRating={true} />
-
-   Web Development page:
-     <SEO page="web-development" includeFaq={true} />
-
-   Digital Marketing page:
-     <SEO page="digital-marketing" includeFaq={true} />
-
-   Ecommerce page:
-     <SEO page="ecommerce" />
-
-   Mobile App page:
-     <SEO page="mobile-app" />
-
-   Full Stack page:
-     <SEO page="full-stack" />
-
-   AI Solutions page:
-     <SEO page="ai-solutions" />
-
-   About page:
-     <SEO page="about" />
-
-   Contact page:
-     <SEO page="contact" />
-
-   Thank You / No-index page:
-     <SEO noindex={true} title="Thank You" />
-
-   Custom override:
-     <SEO
-       title="Custom Title"
-       description="Custom description"
-       url="https://nevatrix.com/custom-page"
-     />
-
-   ============================================================ */

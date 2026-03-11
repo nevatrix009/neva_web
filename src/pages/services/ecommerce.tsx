@@ -10,11 +10,6 @@ import {
     CheckCircle,
     MessageSquare, PenTool, Code2, Rocket,
 } from "lucide-react";
-import type { Metadata } from "next";
-import { getPageSEO } from "@/components/seoConfig";
-
-export const metadata: Metadata = getPageSEO("ecommerce");
-
 
 export default function EcommercePage() {
     return (

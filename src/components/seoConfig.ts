@@ -1,140 +1,39 @@
-import type { Metadata } from "next";
+// components/seoConfig.ts
+//
+// ⚠️  THIS FILE IS DEPRECATED — DO NOT USE
+//
+// All SEO data has been moved to components/SEO.tsx
+// SEO.tsx is now the single source of truth for:
+//   - All page titles, descriptions, keywords
+//   - Organization, LocalBusiness, Service, WebSite JSON-LD schemas
+//   - FAQ and AggregateRating schemas
+//   - Competitor-researched keywords for all pages
+//
+// WHY THIS FILE WAS REPLACED:
+//   1. Wrong keys: "mobile-app-development" / "full-stack-development"
+//      didn't match actual page paths (/mobile-app, /full-stack)
+//      → caused getPageSEO() to return undefined silently
+//   2. No city targeting — missing Warangal, Hanamkonda, Khammam
+//   3. Keywords were arrays (Next.js ignores array keywords in metadata)
+//      should be a single comma-separated string
+//   4. Missing pages: about, contact, ai-solutions
+//   5. Weak keywords with no "near me", "best", "top" variants
+//      that competitors SVAPPS and Krify rank #1 for
+//
+// HOW TO USE THE NEW SYSTEM:
+//
+//   Pages with layout.tsx (web-dev, digital-marketing, full-stack, mobile-app):
+//     → Metadata comes from layout.tsx
+//     → JSON-LD schemas come from <SEO page="..." /> in page.tsx
+//
+//   Pages without layout.tsx (ecommerce, ai-solutions, about, contact):
+//     → Everything from <SEO page="..." /> in page.tsx
+//
+//   Homepage:
+//     → <SEO includeFaq={true} includeRating={true} />
+//
+// DELETE THIS FILE once you confirm no remaining imports exist.
+// Search your codebase for: import.*seoConfig  or  getPageSEO
+// ─────────────────────────────────────────────────────────────────
 
-const baseUrl = "https://nevatrix.com";
-
-export type PageSEO =
-    | "digital-marketing"
-    | "ecommerce"
-    | "mobile-app-development"
-    | "full-stack-development"
-    | "web-development";
-
-export const SEO_DATA: Record<PageSEO, Metadata> = {
-    "digital-marketing": {
-        title: "Digital Marketing Agency in India | SEO, Google Ads & Social Media - Nevatrix",
-        description:
-            "Nevatrix is a professional digital marketing agency offering SEO, Google Ads and social media marketing services to increase website traffic, leads and sales.",
-        keywords: [
-            "digital marketing agency",
-            "seo services company",
-            "google ads agency",
-            "social media marketing company",
-            "lead generation services",
-        ],
-        openGraph: {
-            title: "Digital Marketing Services - Nevatrix",
-            description:
-                "Grow your business online with Nevatrix digital marketing services.",
-            url: `${baseUrl}/services/digital-marketing`,
-            siteName: "Nevatrix",
-            images: [
-                {
-                    url: "/digital-marketing.jpg",
-                    width: 1200,
-                    height: 630,
-                    alt: "Nevatrix Digital Marketing Services",
-                },
-            ],
-            type: "website",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "Digital Marketing Agency - Nevatrix",
-            description:
-                "Increase traffic, leads and sales using SEO and paid marketing.",
-            images: ["/digital-marketing.jpg"],
-        },
-        alternates: {
-            canonical: `${baseUrl}/services/digital-marketing`,
-        },
-    },
-
-    ecommerce: {
-        title: "Ecommerce Website Development Company | Shopify & WooCommerce - Nevatrix",
-        description:
-            "Nevatrix develops ecommerce websites using Shopify, WooCommerce and custom platforms with payment and shipping integration.",
-        keywords: [
-            "ecommerce website development",
-            "shopify development company",
-            "woocommerce developers",
-            "online store development",
-        ],
-        alternates: {
-            canonical: `${baseUrl}/services/ecommerce`,
-        },
-    },
-
-    "mobile-app-development": {
-        title: "Mobile App Development Company | Android & iOS Apps - Nevatrix",
-        description:
-            "Nevatrix builds Android and iOS mobile applications for startups and businesses including ecommerce apps and on-demand service apps.",
-        keywords: [
-            "mobile app development company",
-            "android app developers",
-            "ios app development",
-            "cross platform mobile apps",
-        ],
-        alternates: {
-            canonical: `${baseUrl}/services/mobile-app-development`,
-        },
-    },
-
-    "full-stack-development": {
-        title: "Full Stack Development Company | Web Application Developers - Nevatrix",
-        description:
-            "Nevatrix provides full stack web development including frontend, backend APIs and scalable databases.",
-        keywords: [
-            "full stack development company",
-            "web application development",
-            "saas development company",
-            "custom software development",
-        ],
-        alternates: {
-            canonical: `${baseUrl}/services/full-stack-development`,
-        },
-    },
-
-    "web-development": {
-        title: "Web Development Company in India | Business Websites & Landing Pages - Nevatrix",
-        description:
-            "Nevatrix builds fast, SEO-optimised websites including business websites, landing pages and e-commerce stores using React, Next.js and modern web technologies.",
-        keywords: [
-            "web development company",
-            "business website development",
-            "landing page design",
-            "ecommerce website development",
-            "responsive web design",
-            "nextjs web development",
-        ],
-        openGraph: {
-            title: "Web Development Services - Nevatrix",
-            description:
-                "Fast, beautiful and conversion-focused websites built by Nevatrix.",
-            url: `${baseUrl}/services/web-development`,
-            siteName: "Nevatrix",
-            images: [
-                {
-                    url: "/web-development.jpg",
-                    width: 1200,
-                    height: 630,
-                    alt: "Nevatrix Web Development Services",
-                },
-            ],
-            type: "website",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "Web Development Company - Nevatrix",
-            description:
-                "Professional websites and landing pages built for performance and conversions.",
-            images: ["/web-development.jpg"],
-        },
-        alternates: {
-            canonical: `${baseUrl}/services/web-development`,
-        },
-    },
-};
-
-export function getPageSEO(page: PageSEO): Metadata {
-    return SEO_DATA[page];
-}
+export {};

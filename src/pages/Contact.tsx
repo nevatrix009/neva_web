@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Mail, Briefcase, Phone } from "lucide-react";
 import { useState } from "react";
+import SEO from "@/components/SEO";
 
 export default function ContactPage() {
 
@@ -61,6 +62,7 @@ export default function ContactPage() {
 
     return (
         <>
+            <SEO page="contact" />
             {/* ========================= */}
             {/* CONTACT BANNER */}
             {/* ========================= */}

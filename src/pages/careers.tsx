@@ -10,6 +10,7 @@ import {
     CheckCircle,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import SEO from "@/components/SEO";
 
 export default function CareersPage() {
 
@@ -23,6 +24,7 @@ export default function CareersPage() {
 
     return (
         <>
+            <SEO page="careers" />
             {/* ================= HERO WITH IMAGE ================= */}
             <section className="relative min-h-[460px] py-28 text-center text-white overflow-hidden">
 
