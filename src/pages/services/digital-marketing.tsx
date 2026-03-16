@@ -13,51 +13,148 @@ import {
     TrendingUp,
     IndianRupee,
     ChevronDown,
+    ArrowRight,
+    Award,
+    Clock,
+    ShieldCheck,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import SEO from "@/components/SEO";
 
-const services: [string, LucideIcon, string, string][] = [
-    [
-        "Search Engine Optimization (SEO)",
-        Search,
-        "bg-blue-50 text-blue-600",
-        "We optimize your website with keyword research, on-page SEO, technical fixes and link building to rank on the first page of Google for searches in Warangal and Telangana.",
-    ],
-    [
-        "Google Ads (PPC Advertising)",
-        Target,
-        "bg-indigo-50 text-indigo-600",
-        "We create and manage targeted Google Ads campaigns that put your business in front of high-intent buyers — driving quality leads while maximizing your return on ad spend.",
-    ],
-    [
-        "Social Media Marketing",
-        Users,
-        "bg-purple-50 text-purple-600",
-        "We manage your Facebook, Instagram and LinkedIn presence with engaging content, paid campaigns and community management to grow your brand audience and generate enquiries.",
-    ],
-    [
-        "Content Marketing",
-        Megaphone,
-        "bg-emerald-50 text-emerald-600",
-        "We create SEO-optimized blog posts, landing pages and content strategies that attract your target audience, build trust and convert readers into paying customers.",
-    ],
-    [
-        "Analytics & Reporting",
-        BarChart3,
-        "bg-orange-50 text-orange-600",
-        "We set up Google Analytics, Search Console and campaign dashboards so you always know which channels are driving traffic, leads and revenue — with clear monthly reports.",
-    ],
-    [
-        "Lead Generation Campaigns",
-        LineChart,
-        "bg-pink-50 text-pink-600",
-        "We build end-to-end lead generation funnels combining SEO, paid ads and landing page optimization to deliver a consistent pipeline of qualified leads for your business.",
-    ],
+/* ─────────────────────────────────────────────
+   SERVICES DATA
+───────────────────────────────────────────── */
+const services: {
+    title: string;
+    icon: LucideIcon;
+    accent: string;
+    tag: string;
+    desc: string;
+}[] = [
+    {
+        title: "Search Engine Optimisation (SEO)",
+        icon: Search,
+        accent: "#2563EB",
+        tag: "Organic Growth",
+        desc: "We optimize your website with keyword research, on-page SEO, technical fixes and authoritative link building to rank on the first page of Google for high-intent searches in Warangal and across Telangana.",
+    },
+    {
+        title: "Google Ads (PPC Advertising)",
+        icon: Target,
+        accent: "#0891B2",
+        tag: "Paid Performance",
+        desc: "We create and manage precision-targeted Google Ads campaigns that put your business in front of ready-to-buy customers — driving quality leads while maximizing your return on ad spend.",
+    },
+    {
+        title: "Social Media Marketing",
+        icon: Users,
+        accent: "#7C3AED",
+        tag: "Brand Presence",
+        desc: "We manage your Facebook, Instagram and LinkedIn presence with data-driven content, paid campaigns and community engagement to grow your brand audience and generate consistent enquiries.",
+    },
+    {
+        title: "Content Marketing",
+        icon: Megaphone,
+        accent: "#059669",
+        tag: "Authority Building",
+        desc: "We produce SEO-optimised blog posts, service pages and strategic content that attracts your target audience in Warangal, builds domain authority and converts readers into paying customers.",
+    },
+    {
+        title: "Analytics & Reporting",
+        icon: BarChart3,
+        accent: "#D97706",
+        tag: "Data Intelligence",
+        desc: "We configure Google Analytics 4, Search Console and live campaign dashboards so you always know which channels drive traffic, leads and revenue — with transparent monthly performance reports.",
+    },
+    {
+        title: "Lead Generation Campaigns",
+        icon: LineChart,
+        accent: "#DC2626",
+        tag: "Revenue Focus",
+        desc: "We engineer end-to-end lead generation funnels — combining SEO, paid ads and high-converting landing pages — to deliver a reliable pipeline of qualified prospects for your Warangal business.",
+    },
 ];
 
 /* ─────────────────────────────────────────────
-   FAQ DATA  (accordion UI + JSON-LD schema)
+   RESULTS DATA
+───────────────────────────────────────────── */
+const results = [
+    {
+        icon: Globe,
+        title: "More Website Traffic",
+        metric: "3× avg. organic growth",
+        desc: "Targeted visitors actively searching for your products or services in Warangal, Hanamkonda and surrounding areas.",
+        color: "#2563EB",
+    },
+    {
+        icon: PhoneCall,
+        title: "More Leads & Enquiries",
+        metric: "60%+ lead conversion uplift",
+        desc: "Optimised funnels and landing pages that turn website visitors into real customer enquiries and sales conversations.",
+        color: "#0891B2",
+    },
+    {
+        icon: TrendingUp,
+        title: "Higher Google Rankings",
+        metric: "Page 1 in 90 days",
+        desc: "First-page Google visibility for the keywords your customers search — locally in Warangal and nationally across India.",
+        color: "#059669",
+    },
+    {
+        icon: IndianRupee,
+        title: "Increased Revenue",
+        metric: "Measurable ROI every month",
+        desc: "Every campaign is aligned to your revenue goals — converting traffic and leads into consistent, predictable business growth.",
+        color: "#7C3AED",
+    },
+];
+
+/* ─────────────────────────────────────────────
+   PROCESS STEPS
+───────────────────────────────────────────── */
+const steps = [
+    {
+        num: "01",
+        icon: Search,
+        title: "Business & Market Audit",
+        desc: "We analyse your current online presence, benchmark against Warangal competitors and map the highest-impact growth opportunities.",
+        color: "#2563EB",
+    },
+    {
+        num: "02",
+        icon: Target,
+        title: "Custom Strategy Design",
+        desc: "We build a bespoke SEO, Google Ads and content roadmap aligned to your revenue targets and the keywords your customers are searching.",
+        color: "#0891B2",
+    },
+    {
+        num: "03",
+        icon: Megaphone,
+        title: "Precision Execution",
+        desc: "We launch and manage every campaign element — SEO, paid ads, social — with each channel working in concert to maximise lead volume.",
+        color: "#059669",
+    },
+    {
+        num: "04",
+        icon: LineChart,
+        title: "Optimise & Scale",
+        desc: "We track performance weekly, deliver clear monthly reports and continuously refine campaigns to compound your ROI over time.",
+        color: "#7C3AED",
+    },
+];
+
+/* ─────────────────────────────────────────────
+   TRUST SIGNALS
+───────────────────────────────────────────── */
+const trust = [
+    { icon: Award, label: "12+ Years in the Market" },
+    { icon: ShieldCheck, label: "24*7 Support Partner" },
+    { icon: Users, label: "150+ Businesses Grown" },
+    { icon: Clock, label: "Transparent Monthly Reporting" },
+];
+
+/* ─────────────────────────────────────────────
+   FAQ DATA
 ───────────────────────────────────────────── */
 const faqs = [
     {
@@ -70,19 +167,19 @@ const faqs = [
     },
     {
         q: "How long does SEO take to show results?",
-        a: "Most businesses start seeing meaningful improvements in Google rankings and organic traffic within 3–6 months of consistent SEO work. Local SEO results for Warangal-based businesses can appear faster — often within 4–8 weeks for Google Business Profile rankings.",
+        a: "Most businesses see meaningful improvements in Google rankings and organic traffic within 3–6 months of consistent SEO work. Local SEO results for Warangal-based businesses can appear faster — often within 4–8 weeks for Google Business Profile rankings.",
     },
     {
         q: "Does Nevatrix manage Google Ads campaigns?",
-        a: "Yes. Nevatrix creates, manages and optimizes Google Ads (PPC) campaigns for businesses in Warangal and across India. We handle keyword selection, ad copywriting, bid management and conversion tracking to maximize your return on ad spend.",
+        a: "Yes. Nevatrix creates, manages and optimizes Google Ads (PPC) campaigns for businesses in Warangal and across India. We handle keyword selection, ad copywriting, bid management and conversion tracking to maximise your return on ad spend.",
     },
     {
         q: "What is local SEO and why does my Warangal business need it?",
-        a: "Local SEO optimizes your online presence so your business appears in Google searches like 'web development company near me' or 'digital marketing agency Warangal'. It includes Google Business Profile optimization, local citations and location-based keyword targeting — essential for any business serving customers in Warangal.",
+        a: "Local SEO optimises your online presence so your business appears in Google searches like 'digital marketing agency Warangal' or 'web development company near me'. It includes Google Business Profile optimisation, local citations and location-based keyword targeting — essential for any business serving customers in Warangal.",
     },
     {
         q: "Does Nevatrix offer social media marketing services?",
-        a: "Yes. Nevatrix provides social media marketing services including content creation, account management, paid social campaigns on Facebook, Instagram and LinkedIn, and performance reporting for businesses in Warangal and Telangana.",
+        a: "Yes. Nevatrix provides complete social media marketing services including content creation, account management, paid social campaigns on Facebook, Instagram and LinkedIn, and detailed performance reporting for businesses in Warangal and Telangana.",
     },
 ];
 
@@ -96,355 +193,462 @@ export default function DigitalMarketingPage() {
     return (
         <>
             <SEO page="digital-marketing" />
-            {/* ══════════════════════════════════════
-                HERO
-            ══════════════════════════════════════ */}
-            <section className="relative min-h-[460px] flex items-center justify-center overflow-hidden text-center text-white">
-                <div className="absolute inset-0">
-                    <Image
-                        src="/digital-marketing.jpg"
-                        // ✅ FIXED: keyword-rich alt text
-                        alt="Digital marketing agency in Warangal - SEO and Google Ads services by Nevatrix"
-                        fill
-                        priority
-                        sizes="100vw"
-                        className="object-cover"
-                    />
-                </div>
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/40 via-blue-900/30 to-purple-900/40" />
 
-                <div className="relative z-10 max-w-4xl mx-auto px-6">
-                    {/* ✅ FIXED: H1 now targets primary keyword */}
-                    <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
-                        Digital Marketing
-                    </h1>
-                    <p className="text-lg md:text-xl text-slate-200 leading-relaxed max-w-2xl mx-auto">
-                        Nevatrix helps businesses in growth and in
-                        increase of website traffic, generate quality leads and boost sales
-                        through SEO, Google Ads and social media marketing.
-                    </p>
-                </div>
-            </section>
+            <style jsx global>{`
+                @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
 
-            {/* ══════════════════════════════════════
-                SERVICES  (all unique descriptions)
-            ══════════════════════════════════════ */}
-            {/* ================= SERVICES ================= */}
-            <section className="relative py-32 overflow-hidden">
+                .dm-page {
+                    font-family: 'DM Sans', sans-serif;
+                    color: #0F172A;
+                }
+                .dm-page h1,
+                .dm-page h2,
+                .dm-page h3,
+                .dm-page h4 {
+                    font-family: 'Plus Jakarta Sans', sans-serif;
+                }
 
-                {/* Colorful mesh background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 -z-20" />
-                <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-blue-200/40 blur-3xl rounded-full -z-10" />
-                <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-purple-200/40 blur-3xl rounded-full -z-10" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-indigo-200/30 blur-3xl rounded-full -z-10" />
+                /* Hero line reveal */
+                @keyframes lineReveal {
+                    from { transform: scaleX(0); }
+                    to   { transform: scaleX(1); }
+                }
 
-                <div className="text-center mb-20">
-                    <h2 className="text-3xl font-semibold text-slate-800 mb-4">
-                        Our Digital Marketing Services in Warangal
-                    </h2>
-                    <p className="text-slate-600 max-w-2xl mx-auto">
-                        Complete online marketing solutions designed to grow your business,
-                        increase visibility and generate consistent leads in Warangal and Telangana.
-                    </p>
-                </div>
+                /* Subtle float */
+                @keyframes floatY {
+                    0%, 100% { transform: translateY(0); }
+                    50%       { transform: translateY(-8px); }
+                }
 
-                <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map(([title, Icon, style, desc], i) => {
+                .dm-stat-card { animation: floatY 6s ease-in-out infinite; }
+                .dm-stat-card:nth-child(2) { animation-delay: 1s; }
+                .dm-stat-card:nth-child(3) { animation-delay: 2s; }
+                .dm-stat-card:nth-child(4) { animation-delay: 3s; }
 
-                        // Per-card background gradients — each card is a different color
-                        const cardBgs = [
-                            "from-blue-100/80 via-blue-50 to-white",
-                            "from-indigo-100/80 via-indigo-50 to-white",
-                            "from-purple-100/80 via-purple-50 to-white",
-                            "from-emerald-100/80 via-emerald-50 to-white",
-                            "from-orange-100/80 via-orange-50 to-white",
-                            "from-pink-100/80 via-pink-50 to-white",
-                        ];
+                /* Grid lines background */
+                .grid-bg {
+                    background-image:
+                            linear-gradient(rgba(37,99,235,0.04) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(37,99,235,0.04) 1px, transparent 1px);
+                    background-size: 48px 48px;
+                }
 
-                        const cardBorders = [
-                            "border-blue-200/60",
-                            "border-indigo-200/60",
-                            "border-purple-200/60",
-                            "border-emerald-200/60",
-                            "border-orange-200/60",
-                            "border-pink-200/60",
-                        ];
+                /* Diagonal separator */
+                .diagonal-sep {
+                    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+                }
 
-                        const glows = [
-                            "group-hover:shadow-blue-200/60",
-                            "group-hover:shadow-indigo-200/60",
-                            "group-hover:shadow-purple-200/60",
-                            "group-hover:shadow-emerald-200/60",
-                            "group-hover:shadow-orange-200/60",
-                            "group-hover:shadow-pink-200/60",
-                        ];
+                /* Service card hover */
+                .svc-card {
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    border: 1px solid #E2E8F0;
+                }
+                .svc-card:hover {
+                    transform: translateY(-6px);
+                    box-shadow: 0 20px 48px -12px rgba(15,23,42,0.12);
+                    border-color: var(--card-accent);
+                }
+                .svc-bar {
+                    height: 3px;
+                    width: 0;
+                    transition: width 0.4s ease;
+                    border-radius: 2px;
+                }
+                .svc-card:hover .svc-bar { width: 100%; }
 
-                        return (
-                            <div
-                                key={i}
-                                className={`group relative rounded-3xl p-8 border bg-gradient-to-br ${cardBgs[i % cardBgs.length]} ${cardBorders[i % cardBorders.length]} hover:-translate-y-4 hover:shadow-2xl ${glows[i % glows.length]} transition duration-300 backdrop-blur-sm`}
-                            >
-                                {/* subtle corner accent */}
-                                <div className="absolute top-0 right-0 w-24 h-24 rounded-bl-full opacity-20 bg-gradient-to-bl from-current to-transparent" />
+                /* FAQ */
+                .faq-body {
+                    display: grid;
+                    grid-template-rows: 0fr;
+                    transition: grid-template-rows 0.3s ease;
+                }
+                .faq-body.open { grid-template-rows: 1fr; }
+                .faq-inner { overflow: hidden; }
 
-                                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${style} group-hover:scale-110 transition shadow-sm`}>
-                                    <Icon size={28} />
-                                </div>
+                /* Step connector line */
+                .step-line {
+                    position: absolute;
+                    top: 28px;
+                    left: calc(100% + 12px);
+                    width: calc(100% - 24px);
+                    height: 1px;
+                    background: linear-gradient(90deg, #CBD5E1, #E2E8F0);
+                }
+                @media (max-width: 1023px) { .step-line { display: none; } }
 
-                                <h3 className="text-lg font-semibold text-slate-800 mb-3">{title}</h3>
-                                <p className="text-slate-600 text-sm leading-relaxed">{desc}</p>
+                /* CTA hover */
+                .cta-btn {
+                    transition: transform 0.2s ease, box-shadow 0.2s ease;
+                }
+                .cta-btn:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 24px rgba(37,99,235,0.35);
+                }
+            `}</style>
 
-                                {/* bottom accent bar */}
-                                <div className={`mt-6 h-[3px] w-0 rounded-full bg-gradient-to-r ${
-                                    ["from-blue-400 to-blue-600",
-                                        "from-indigo-400 to-indigo-600",
-                                        "from-purple-400 to-purple-600",
-                                        "from-emerald-400 to-emerald-600",
-                                        "from-orange-400 to-orange-600",
-                                        "from-pink-400 to-pink-600"][i % 6]
-                                } group-hover:w-full transition-all duration-500`} />
+            <div className="dm-page">
+
+                {/* ══════════════════════════════════
+                    HERO — split layout, corporate
+                ══════════════════════════════════ */}
+                <section className="relative min-h-[560px] flex items-center overflow-hidden bg-[#0A1628] diagonal-sep">
+                    {/* background image with dark overlay */}
+                    <div className="absolute inset-0">
+                        <Image
+                            src="/digital-marketing.jpg"
+                            alt="Digital marketing agency in Warangal — SEO, Google Ads and lead generation services by Nevatrix"
+                            fill
+                            priority
+                            sizes="100vw"
+                            className="object-cover opacity-20"
+                        />
+                    </div>
+
+                    {/* Grid texture */}
+                    <div className="absolute inset-0 grid-bg opacity-60" />
+
+                    {/* Accent orb */}
+                    <div className="absolute -bottom-24 right-[-100px] w-[500px] h-[500px] rounded-full bg-blue-600/10 blur-3xl pointer-events-none" />
+                    <div className="absolute top-[-80px] left-[-60px]   w-[360px] h-[360px] rounded-full bg-cyan-600/10  blur-3xl pointer-events-none" />
+
+                    <div className="relative z-10 max-w-7xl mx-auto px-6 py-28 w-full">
+                        <div className="max-w-3xl">
+                            {/* Eyebrow */}
+                            <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-xs font-semibold tracking-widest uppercase">
+                                <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                                Business Growth Partner Since 2012
                             </div>
-                        );
-                    })}
-                </div>
-            </section>
 
-            {/* ══════════════════════════════════════
-                RESULTS
-            ══════════════════════════════════════ */}
-            <section className="relative py-32 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50 to-white -z-20" />
-                <div className="absolute -top-24 left-[-120px] w-[420px] h-[420px] bg-blue-200/30 blur-3xl rounded-full -z-10" />
-                <div className="absolute -bottom-24 right-[-120px] w-[420px] h-[420px] bg-indigo-200/30 blur-3xl rounded-full -z-10" />
+                            <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight">
+                                Digital Marketing
+                                <br />
+                                <span className="text-blue-400">That Drives</span>
+                                <br />
+                                Real Revenue
+                            </h1>
 
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="text-center mb-20">
-                        <h2 className="text-3xl font-semibold text-slate-800 mb-4">
-                            What You Get From Our Marketing
-                        </h2>
-                        <p className="text-slate-600 max-w-2xl mx-auto">
-                            Our campaigns are focused on measurable business growth — not
-                            vanity metrics like impressions or follower counts.
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-                        {[
-                            {
-                                title: "More Website Traffic",
-                                desc: "We drive targeted visitors who are actively searching for your products or services in Warangal and surrounding areas.",
-                                color: "bg-blue-50 border-blue-100 text-blue-600",
-                                icon: Globe,
-                            },
-                            {
-                                title: "More Leads & Enquiries",
-                                desc: "We build optimized funnels and landing pages that convert website visitors into real customer enquiries and sales calls.",
-                                color: "bg-indigo-50 border-indigo-100 text-indigo-600",
-                                icon: PhoneCall,
-                            },
-                            {
-                                title: "Higher Google Rankings",
-                                desc: "We rank your business on the first page of Google for the keywords your customers are searching — locally and nationally.",
-                                color: "bg-emerald-50 border-emerald-100 text-emerald-600",
-                                icon: TrendingUp,
-                            },
-                            {
-                                title: "Increased Sales",
-                                desc: "We align every campaign with your revenue goals — turning traffic and leads into consistent, predictable business growth.",
-                                color: "bg-purple-50 border-purple-100 text-purple-600",
-                                icon: IndianRupee,
-                            },
-                        ].map((item, i) => (
+                            {/* Animated underline accent */}
                             <div
-                                key={i}
-                                className={`group rounded-3xl p-8 border ${item.color} hover:-translate-y-3 hover:shadow-2xl transition duration-300 bg-white/70 backdrop-blur-xl`}
-                            >
-                                <div className={`w-14 h-14 rounded-xl mb-6 flex items-center justify-center border ${item.color} group-hover:scale-110 transition`}>
-                                    <item.icon size={26} />
-                                </div>
-                                <h3 className="text-lg font-semibold text-slate-800 mb-2">{item.title}</h3>
-                                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
-                                <div className="mt-6 h-[3px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full group-hover:w-full transition-all duration-300" />
+                                className="h-[3px] w-48 bg-blue-500 mb-8 origin-left"
+                                style={{ animation: "lineReveal 0.8s 0.3s ease both" }}
+                            />
+
+                            <p className="text-slate-300 text-lg leading-relaxed max-w-xl mb-10">
+                                Nevatrix helps businesses growth using
+                                website traffic, generate quality leads and boost revenue
+                                through SEO, Google Ads and social media marketing.
+                            </p>
+
+                            <div className="flex flex-wrap gap-4">
+                                <a
+                                    href="mailto:contact@nevatrix.com"
+                                    className="cta-btn inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-7 py-3.5 rounded-lg font-semibold text-sm shadow-lg shadow-blue-900/40"
+                                >
+                                    Request Free SEO Audit <ArrowRight size={16} />
+                                </a>
+                                <a
+                                    href="#services"
+                                    className="inline-flex items-center gap-2 border border-slate-600 hover:border-slate-400 text-slate-300 hover:text-white px-7 py-3.5 rounded-lg font-semibold text-sm transition"
+                                >
+                                    View Services
+                                </a>
                             </div>
-                        ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* ══════════════════════════════════════
-                MARKETING PROCESS
-            ══════════════════════════════════════ */}
-            <section className="relative py-32 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-white via-sky-50 to-indigo-50 -z-20" />
-                <div className="absolute -top-24 left-[-120px] w-[420px] h-[420px] bg-blue-200/30 blur-3xl rounded-full -z-10" />
-                <div className="absolute -bottom-24 right-[-120px] w-[420px] h-[420px] bg-indigo-200/30 blur-3xl rounded-full -z-10" />
-
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="text-center mb-24">
-                        <h2 className="text-3xl font-semibold text-slate-800 mb-4">
-                            Our Digital Marketing Process
-                        </h2>
-                        <p className="text-slate-600 max-w-2xl mx-auto">
-                            A structured growth strategy designed to bring real business
-                            results — not just impressions or clicks.
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-                        {[
-                            {
-                                title: "Business Analysis",
-                                desc: "We audit your current online presence, study your competitors in Warangal and identify the highest-impact opportunities for growth.",
-                                color: "bg-blue-50 border-blue-100 text-blue-600",
-                                icon: Search,
-                            },
-                            {
-                                title: "Strategy Planning",
-                                desc: "We build a custom SEO, Google Ads and content strategy based on your goals, target audience and the keywords your customers are searching.",
-                                color: "bg-indigo-50 border-indigo-100 text-indigo-600",
-                                icon: Target,
-                            },
-                            {
-                                title: "Campaign Execution",
-                                desc: "We launch SEO optimization, Google Ads campaigns and social media marketing — with every element aligned to drive leads and revenue.",
-                                color: "bg-emerald-50 border-emerald-100 text-emerald-600",
-                                icon: Megaphone,
-                            },
-                            {
-                                title: "Reporting & Optimization",
-                                desc: "We track results weekly, share clear monthly performance reports and continuously refine campaigns to improve ROI over time.",
-                                color: "bg-purple-50 border-purple-100 text-purple-600",
-                                icon: LineChart,
-                            },
-                        ].map((step, i) => (
-                            <div key={i} className="group relative">
-                                <div className={`rounded-3xl border ${step.color} bg-white/80 backdrop-blur-xl p-8 hover:-translate-y-4 hover:shadow-2xl transition duration-300`}>
-                                    <div className={`w-14 h-14 rounded-xl mb-6 flex items-center justify-center border ${step.color} group-hover:scale-110 transition`}>
-                                        <step.icon size={26} />
+                {/* ══════════════════════════════════
+                    TRUST BAR
+                ══════════════════════════════════ */}
+                <section className="bg-blue-50/60 border-b border-blue-100/80 py-6">
+                    <div className="max-w-6xl mx-auto px-6">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 divide-x divide-slate-100">
+                            {trust.map(({ icon: Icon, label }, i) => (
+                                <div key={i} className="flex items-center gap-3 px-6 first:pl-0">
+                                    <div className="w-9 h-9 rounded-md bg-blue-50 flex items-center justify-center flex-shrink-0">
+                                        <Icon size={18} className="text-blue-600" />
                                     </div>
-                                    <h3 className="text-lg font-semibold text-slate-800 mb-2">{step.title}</h3>
-                                    <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+                                    <span className="text-slate-700 text-sm font-medium leading-tight">{label}</span>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* ══════════════════════════════════════
-                FAQ ACCORDION
-            ══════════════════════════════════════ */}
-            {/* ================= FAQ ================= */}
-            <section className="relative py-20 overflow-hidden">
+                {/* ══════════════════════════════════
+                    SERVICES
+                ══════════════════════════════════ */}
+                <section id="services" className="py-28 bg-gradient-to-b from-blue-50/50 via-indigo-50/30 to-slate-50/60">
+                    <div className="max-w-7xl mx-auto px-6">
+                        {/* Section header */}
+                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+                            <div>
+                                <p className="text-blue-600 text-xs font-bold tracking-widest uppercase mb-3">
+                                    What We Do
+                                </p>
+                                <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
+                                    Digital Marketing Services
+                                    <br />
+                                    {/*<span className="text-slate-500 font-medium">in Warangal &amp; Telangana</span>*/}
+                                </h2>
+                            </div>
+                            <p className="text-slate-500 text-sm leading-relaxed max-w-sm">
+                                Complete online marketing solutions designed to grow your
+                                business visibility and generate consistent, qualified leads.
+                            </p>
+                        </div>
 
-                {/* Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 -z-20" />
-                <div className="absolute -top-24 -left-24 w-[400px] h-[400px] bg-indigo-200/35 blur-3xl rounded-full -z-10" />
-                <div className="absolute -bottom-24 -right-24 w-[400px] h-[400px] bg-purple-200/35 blur-3xl rounded-full -z-10" />
-
-                <div className="max-w-3xl mx-auto px-6">
-                    <h2 className="text-2xl font-semibold text-slate-800 mb-10 text-center">
-                        Frequently Asked Questions — Digital Marketing in Warangal
-                    </h2>
-
-                    <div className="space-y-4">
-                        {faqs.map((faq, i) => {
-                            const isOpen = openIndex === i;
-
-                            // Per-item color theme
-                            const themes = [
-                                { border: "border-blue-300",   shadow: "shadow-blue-100",   bg: "bg-blue-50/60",   bar: "bg-blue-500",   icon: "text-blue-500",   activeBg: "bg-blue-50"   },
-                                { border: "border-indigo-300", shadow: "shadow-indigo-100", bg: "bg-indigo-50/60", bar: "bg-indigo-500", icon: "text-indigo-500", activeBg: "bg-indigo-50" },
-                                { border: "border-purple-300", shadow: "shadow-purple-100", bg: "bg-purple-50/60", bar: "bg-purple-500", icon: "text-purple-500", activeBg: "bg-purple-50" },
-                                { border: "border-emerald-300",shadow: "shadow-emerald-100",bg: "bg-emerald-50/60",bar: "bg-emerald-500",icon: "text-emerald-500",activeBg: "bg-emerald-50"},
-                                { border: "border-orange-300", shadow: "shadow-orange-100", bg: "bg-orange-50/60", bar: "bg-orange-500", icon: "text-orange-500", activeBg: "bg-orange-50" },
-                                { border: "border-pink-300",   shadow: "shadow-pink-100",   bg: "bg-pink-50/60",   bar: "bg-pink-500",   icon: "text-pink-500",   activeBg: "bg-pink-50"   },
-                            ];
-
-                            const t = themes[i % themes.length];
-
-                            return (
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {services.map((svc, i) => (
                                 <div
                                     key={i}
-                                    className={`border rounded-2xl overflow-hidden transition-all duration-300 backdrop-blur-sm ${
-                                        isOpen
-                                            ? `${t.border} shadow-lg ${t.shadow} ${t.bg}`
-                                            : "border-white/80 bg-white/70 hover:border-slate-200 hover:shadow-md"
-                                    }`}
+                                    className="svc-card rounded-2xl p-8 flex flex-col"
+                                    style={{ "--card-accent": svc.accent, backgroundColor: svc.accent + "08", border: `1px solid ${svc.accent}22` } as React.CSSProperties}
                                 >
-                                    {/* Left color bar */}
-                                    <div className="flex">
-                                        <div className={`w-1 flex-shrink-0 rounded-l-2xl transition-all duration-300 ${isOpen ? t.bar : "bg-transparent"}`} />
+                                    {/* Tag pill */}
+                                    <span
+                                        className="self-start text-[11px] font-bold tracking-wider uppercase px-3 py-1 rounded-full mb-6"
+                                        style={{
+                                            color: svc.accent,
+                                            background: svc.accent + "15",
+                                        }}
+                                    >
+                                        {svc.tag}
+                                    </span>
 
-                                        <div className="flex-1">
-                                            {/* Question */}
-                                            <button
-                                                onClick={() => toggle(i)}
-                                                className={`w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors duration-200 ${
-                                                    isOpen ? t.activeBg : "bg-transparent hover:bg-slate-50/80"
-                                                }`}
-                                                aria-expanded={isOpen}
+                                    {/* Icon */}
+                                    <div
+                                        className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 flex-shrink-0"
+                                        style={{ background: svc.accent + "12" }}
+                                    >
+                                        <svc.icon size={22} style={{ color: svc.accent }} />
+                                    </div>
+
+                                    <h3 className="text-base font-bold text-slate-900 mb-3 leading-snug">
+                                        {svc.title}
+                                    </h3>
+                                    <p className="text-slate-500 text-sm leading-relaxed flex-1">
+                                        {svc.desc}
+                                    </p>
+
+                                    {/* Animated bottom bar */}
+                                    <div
+                                        className="svc-bar mt-6"
+                                        style={{ background: svc.accent }}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* ══════════════════════════════════
+                    RESULTS / OUTCOMES
+                ══════════════════════════════════ */}
+                <section className="py-28 bg-gradient-to-br from-sky-50/70 via-white to-indigo-50/50">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <div className="text-center mb-16">
+                            <p className="text-blue-600 text-xs font-bold tracking-widest uppercase mb-3">
+                                Measurable Outcomes
+                            </p>
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+                                What You Gain With Nevatrix
+                            </h2>
+                            <p className="text-slate-500 text-sm max-w-xl mx-auto">
+                                Our campaigns are focused on business outcomes — not vanity
+                                metrics like impressions or follower counts.
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {results.map((r, i) => (
+                                <div
+                                    key={i}
+                                    className="dm-stat-card rounded-2xl p-8 border shadow-sm hover:shadow-lg transition-shadow duration-300"
+                                    style={{ backgroundColor: r.color + "08", borderColor: r.color + "25" }}
+                                >
+                                    <div
+                                        className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                                        style={{ background: r.color + "12" }}
+                                    >
+                                        <r.icon size={22} style={{ color: r.color }} />
+                                    </div>
+                                    <div
+                                        className="text-xs font-bold tracking-wider uppercase mb-3 px-2 py-0.5 rounded self-start inline-block"
+                                        style={{ color: r.color, background: r.color + "12" }}
+                                    >
+                                        {r.metric}
+                                    </div>
+                                    <h3 className="text-base font-bold text-slate-900 mb-2">
+                                        {r.title}
+                                    </h3>
+                                    <p className="text-slate-500 text-sm leading-relaxed">
+                                        {r.desc}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* ══════════════════════════════════
+                    PROCESS
+                ══════════════════════════════════ */}
+                <section className="py-28 bg-gradient-to-b from-emerald-50/40 via-teal-50/20 to-cyan-50/30">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <div className="text-center mb-16">
+                            <p className="text-blue-600 text-xs font-bold tracking-widest uppercase mb-3">
+                                Our Methodology
+                            </p>
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+                                How We Grow Your Business
+                            </h2>
+                            <p className="text-slate-500 text-sm max-w-xl mx-auto">
+                                A structured, data-driven process engineered to deliver compounding
+                                results — not one-off spikes.
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+                            {steps.map((step, i) => (
+                                <div key={i} className="relative">
+                                    {/* Connector line (desktop only) */}
+                                    {i < steps.length - 1 && <span className="step-line" />}
+
+                                    <div className="rounded-2xl border rounded-2xl p-8 h-full hover:shadow-xl hover:-translate-y-2 transition duration-300"
+                                         style={{ backgroundColor: step.color + "07", borderColor: step.color + "20" }}>
+                                        {/* Step number + icon */}
+                                        <div className="flex items-center gap-3 mb-5">
+                                            <span
+                                                className="text-2xl font-black leading-none"
+                                                style={{ color: step.color + "33" }}
                                             >
-                                                {/* Number badge */}
-                                                <div className="flex items-center gap-4 min-w-0">
-                          <span className={`flex-shrink-0 w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center transition-colors duration-300 ${
-                              isOpen ? `${t.bar} text-white` : "bg-slate-100 text-slate-500"
-                          }`}>
-                            {i + 1}
-                          </span>
-                                                    <span className="font-medium text-slate-800 text-sm sm:text-base">
-                            {faq.q}
-                          </span>
-                                                </div>
-
-                                                <ChevronDown
-                                                    size={20}
-                                                    className={`flex-shrink-0 transition-all duration-300 ${t.icon} ${isOpen ? "rotate-180" : ""}`}
-                                                />
-                                            </button>
-
-                                            {/* Answer */}
+                                                {step.num}
+                                            </span>
                                             <div
-                                                className={`grid transition-all duration-300 ease-in-out ${
-                                                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                                                }`}
+                                                className="w-10 h-10 rounded-lg flex items-center justify-center"
+                                                style={{ background: step.color + "12" }}
                                             >
-                                                <div className="overflow-hidden">
-                                                    <p className={`px-6 pb-5 pt-3 text-slate-600 text-sm leading-relaxed border-t ${
-                                                        isOpen ? t.border : "border-slate-100"
-                                                    } border-opacity-40`}>
-                                                        {faq.a}
-                                                    </p>
-                                                </div>
+                                                <step.icon size={18} style={{ color: step.color }} />
+                                            </div>
+                                        </div>
+                                        <h3 className="text-base font-bold text-slate-900 mb-3">
+                                            {step.title}
+                                        </h3>
+                                        <p className="text-slate-500 text-sm leading-relaxed">
+                                            {step.desc}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* ══════════════════════════════════
+                    FAQ
+                ══════════════════════════════════ */}
+                <section className="py-28 bg-gradient-to-br from-violet-50/50 via-purple-50/30 to-slate-50/60">
+                    <div className="max-w-3xl mx-auto px-6">
+                        <div className="text-center mb-14">
+                            <p className="text-blue-600 text-xs font-bold tracking-widest uppercase mb-3">
+                                FAQ
+                            </p>
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+                                Questions About Digital Marketing
+                                <br />
+                                {/*<span className="text-slate-400 font-medium">in Warangal</span>*/}
+                            </h2>
+                        </div>
+
+                        <div className="space-y-3">
+                            {faqs.map((faq, i) => {
+                                const isOpen = openIndex === i;
+                                return (
+                                    <div
+                                        key={i}
+                                        className={`border rounded-xl overflow-hidden transition-all duration-200 ${
+                                            isOpen
+                                                ? "border-blue-200 shadow-sm shadow-blue-50"
+                                                : "border-slate-200 hover:border-slate-300"
+                                        }`}
+                                    >
+                                        <button
+                                            onClick={() => toggle(i)}
+                                            className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                                            style={{ backgroundColor: isOpen ? "#EEF2FF" : "white" }}
+                                            aria-expanded={isOpen}
+                                        >
+                                            <div className="flex items-center gap-4 min-w-0">
+                                                <span
+                                                    className={`flex-shrink-0 w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center transition-colors duration-200 ${
+                                                        isOpen
+                                                            ? "bg-blue-600 text-white"
+                                                            : "bg-slate-100 text-slate-500"
+                                                    }`}
+                                                >
+                                                    {i + 1}
+                                                </span>
+                                                <span className="font-semibold text-slate-800 text-sm">
+                                                    {faq.q}
+                                                </span>
+                                            </div>
+                                            <ChevronDown
+                                                size={18}
+                                                className={`flex-shrink-0 text-slate-400 transition-transform duration-300 ${
+                                                    isOpen ? "rotate-180 text-blue-600" : ""
+                                                }`}
+                                            />
+                                        </button>
+                                        <div className={`faq-body ${isOpen ? "open" : ""}`}>
+                                            <div className="faq-inner">
+                                                <p className="px-6 pb-5 pt-1 text-slate-500 text-sm leading-relaxed border-t border-slate-100">
+                                                    {faq.a}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            );
-                        })}
+                                );
+                            })}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* ══════════════════════════════════════
-                CTA
-            ══════════════════════════════════════ */}
-            <section className="py-24 text-center text-white bg-gradient-to-r from-indigo-600 to-blue-600">
-                <h2 className="text-3xl font-semibold mb-4">
-                    Ready to Grow Your Business in Warangal?
-                </h2>
-                <p className="mb-6 text-blue-100">
-                    Get a free digital marketing strategy and SEO consultation from
-                    Nevatrix — the trusted marketing agency in Warangal, Telangana.
-                </p>
-                <a
-                    href="mailto:contact@nevatrix.com"
-                    className="bg-white text-black px-8 py-3 rounded-xl font-medium hover:scale-105 transition inline-flex items-center gap-2 shadow-lg"
-                >
-                    <CheckCircle size={18} /> Request Free Consultation
-                </a>
-            </section>
+                {/* ══════════════════════════════════
+                    CTA BANNER
+                ══════════════════════════════════ */}
+                <section className="relative py-24 overflow-hidden bg-[#0A1628]">
+                    {/* Accent orbs */}
+                    <div className="absolute -top-20 -left-20 w-[360px] h-[360px] rounded-full bg-blue-600/15 blur-3xl pointer-events-none" />
+                    <div className="absolute -bottom-20 -right-20 w-[360px] h-[360px] rounded-full bg-indigo-600/15 blur-3xl pointer-events-none" />
+                    <div className="absolute inset-0 grid-bg opacity-40" />
+
+                    <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+                        <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-xs font-semibold tracking-widest uppercase">
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                            Free Consultation — No Obligation
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-5 leading-tight">
+                            Ready to Grow Your Business
+                            <br />
+                            in Warangal?
+                        </h2>
+                        <p className="text-slate-400 text-base mb-10 max-w-xl mx-auto leading-relaxed">
+                            Get a free digital marketing strategy session and SEO audit from
+                            Nevatrix — the trusted digital marketing agency in Warangal, Telangana.
+                        </p>
+                        <a
+                            href="mailto:contact@nevatrix.com"
+                            className="cta-btn inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-semibold shadow-xl shadow-blue-900/50"
+                        >
+                            <CheckCircle size={18} />
+                            Request Free Consultation
+                            <ArrowRight size={16} />
+                        </a>
+                    </div>
+                </section>
+
+            </div>
         </>
     );
 }
