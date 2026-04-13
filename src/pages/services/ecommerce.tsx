@@ -14,7 +14,7 @@ import {
 export default function EcommercePage() {
     return (
         <>
-            <SEO page="ecommerce" />
+            <SEO page="ecommerce" includeBreadcrumb={true} includeFaq={true} />
             {/* ================= HERO ================= */}
             <section className="relative min-h-[460px] py-28 overflow-hidden">
 

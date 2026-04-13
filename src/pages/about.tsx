@@ -5,7 +5,7 @@ import SEO from "@/components/SEO";
 export default function AboutPage() {
     return (
         <>
-            <SEO page="about" />
+            <SEO page="about" includeBreadcrumb={false} />
             {/* ================= HERO ================= */}
 
             <section className="relative py-28 text-center text-white overflow-hidden">
@@ -14,7 +14,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 -z-10">
                     <Image
                         src="/about-banner.jpg"
-                        alt="Nevatrix banner"
+                        alt="Nevatrix Technologies - Web Development & Digital Marketing Company in Warangal, Telangana"
                         fill
                         priority
                         className="object-cover"

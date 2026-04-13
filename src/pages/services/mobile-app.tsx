@@ -164,7 +164,7 @@ export default function MobileAppPage() {
 
     return (
         <>
-            <SEO page="mobile-app" />
+            <SEO page="mobile-app" includeBreadcrumb={true} />
             <style jsx global>{`
                 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Mulish:wght@300;400;500;600&display=swap');
 

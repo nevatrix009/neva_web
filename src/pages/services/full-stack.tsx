@@ -170,7 +170,7 @@ export default function FullStackPage() {
 
     return (
         <>
-            <SEO page="full-stack" />
+            <SEO page="full-stack" includeBreadcrumb={true} />
 
             <style jsx global>{`
                 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Mulish:wght@300;400;500;600&display=swap');

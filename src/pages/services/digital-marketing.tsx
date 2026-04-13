@@ -192,7 +192,7 @@ export default function DigitalMarketingPage() {
 
     return (
         <>
-            <SEO page="digital-marketing" />
+            <SEO page="digital-marketing" includeBreadcrumb={true} includeFaq={true} />
 
             <style jsx global>{`
                 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');

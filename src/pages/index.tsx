@@ -9,7 +9,7 @@ import MissionVision from "@/components/MissionVision";
 export default function Home() {
   return (
       <>
-            <SEO/>
+            <SEO includeFaq={true} includeRating={true} />
             <Hero />
             <AboutSection />
             <WhatWeDo />
