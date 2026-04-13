@@ -263,6 +263,64 @@ const DEFAULT_SEO = {
 };
 
 // ─────────────────────────────────────────────────────────────────
+// PER-SERVICE FAQ — unique FAQ per service page avoids duplicate
+// content penalties. Each set targets that service's search intent.
+// ─────────────────────────────────────────────────────────────────
+const SERVICE_FAQ: Record<string, { question: string; answer: string }[]> = {
+    "web-development": [
+        { question: "Which is the best web development company in Warangal?", answer: "Nevatrix is the top-rated web development company in Warangal, Telangana, delivering custom websites, ecommerce platforms and web applications since 2012. We use modern frameworks like React and Next.js to build fast, SEO-friendly websites that rank on Google." },
+        { question: "How much does a website cost in Warangal?", answer: "Website development cost in Warangal starts from ₹8,000 for a basic business website. A professional website with custom design costs ₹15,000–₹40,000 and a full ecommerce or web application ranges from ₹40,000 to ₹2,00,000+. Contact Nevatrix for a free quote tailored to your requirements." },
+        { question: "How long does it take to build a website?", answer: "Nevatrix typically delivers a standard business website in 7–14 working days. Ecommerce stores take 3–4 weeks and custom web applications take 4–8 weeks depending on features. We provide a detailed project timeline before starting work." },
+        { question: "Does Nevatrix build mobile-friendly websites?", answer: "Yes, every website Nevatrix builds is fully responsive and mobile-optimised. We test on all major devices and screen sizes. Mobile-first design is our default approach as over 70% of users in India browse on smartphones." },
+        { question: "Does Nevatrix offer website maintenance after launch?", answer: "Yes. Nevatrix provides ongoing website maintenance packages including security updates, content updates, performance monitoring and bug fixes to keep your website running smoothly after launch." },
+        { question: "Can Nevatrix redesign my existing website?", answer: "Yes. Nevatrix specialises in website redesigns and revamps. We analyse your current website's performance, identify conversion blockers and rebuild it with modern design, faster load times and better SEO — while preserving your existing rankings." },
+        { question: "Does Nevatrix build WordPress websites?", answer: "Yes. We build custom WordPress websites, WooCommerce stores and WordPress-based web applications. We also build with React, Next.js and custom full-stack frameworks depending on what suits your business best." },
+    ],
+    "digital-marketing": [
+        { question: "Which is the best digital marketing agency in Warangal?", answer: "Nevatrix is a leading digital marketing agency in Warangal, Telangana offering SEO, Google Ads, social media marketing, email marketing and lead generation. We have helped 100+ businesses grow their online presence and generate measurable results since 2012." },
+        { question: "How much does digital marketing cost in Warangal?", answer: "Digital marketing packages at Nevatrix start from ₹5,000/month for basic SEO and social media. Google Ads management starts from ₹8,000/month (excluding ad spend). Full-service digital marketing packages range from ₹15,000–₹50,000/month. Contact us for a custom quote." },
+        { question: "How long does SEO take to show results?", answer: "SEO typically shows initial results within 3–4 months and significant ranking improvements within 6–12 months. Local SEO for Warangal businesses can show results faster — sometimes within 4–8 weeks — especially with Google Business Profile optimisation." },
+        { question: "Does Nevatrix manage Google Ads campaigns?", answer: "Yes. Nevatrix provides complete Google Ads management including search ads, display ads, shopping ads and YouTube ads. We focus on maximising your return on ad spend (ROAS) with data-driven targeting, keyword research and continuous optimisation." },
+        { question: "Does Nevatrix offer social media marketing in Warangal?", answer: "Yes. We manage Instagram, Facebook, LinkedIn and YouTube marketing for businesses in Warangal. Our services include content creation, paid ads, influencer campaigns and community management — all tailored to your target audience and industry." },
+        { question: "What is local SEO and does Nevatrix offer it?", answer: "Local SEO helps your business appear in Google Maps and local search results for customers in Warangal and surrounding areas. Nevatrix provides complete local SEO including Google Business Profile optimisation, local citations, review management and location-targeted keyword strategies." },
+        { question: "Can Nevatrix help with WhatsApp marketing?", answer: "Yes. Nevatrix sets up and manages WhatsApp Business API campaigns for customer engagement, lead nurturing and broadcast messaging. WhatsApp marketing achieves open rates of 90%+ making it one of the most effective channels for Indian businesses." },
+    ],
+    "full-stack": [
+        { question: "What full stack technologies does Nevatrix use?", answer: "Nevatrix builds full stack applications using React and Next.js (frontend), Node.js and Express (backend), MongoDB, PostgreSQL and MySQL (databases), and deploys on AWS, Vercel and Docker. We follow TypeScript-first development for maintainable, scalable codebases." },
+        { question: "Can Nevatrix build a SaaS application?", answer: "Yes. Nevatrix has experience building multi-tenant SaaS platforms with subscription billing, user management, analytics dashboards and API integrations. We handle the full product lifecycle from MVP to scale." },
+        { question: "Does Nevatrix build CRM and ERP systems?", answer: "Yes. Nevatrix develops custom CRM systems, ERP platforms and enterprise management software tailored to your business processes — far more flexible and cost-effective than off-the-shelf solutions like Salesforce or SAP." },
+        { question: "How long does it take to build a web application?", answer: "A simple MVP web application can be built in 4–6 weeks. A full-featured SaaS platform or enterprise web application typically takes 3–6 months. Nevatrix follows agile development with 2-week sprints and regular demos to keep you involved throughout." },
+        { question: "Does Nevatrix provide API development and integration?", answer: "Yes. We design and build RESTful APIs and GraphQL APIs, and integrate third-party APIs including payment gateways, CRMs, ERPs, social platforms, shipping providers and analytics tools." },
+        { question: "Can I hire dedicated full stack developers from Nevatrix?", answer: "Yes. Nevatrix offers dedicated developer hire models — hire a full stack developer, React developer or Node.js developer on a monthly basis to work exclusively on your project at competitive Indian development rates." },
+    ],
+    "mobile-app": [
+        { question: "What is the cost of mobile app development in India?", answer: "Mobile app development cost in India ranges from ₹50,000–₹2,00,000 for a simple app, ₹2,00,000–₹8,00,000 for a mid-complexity app and ₹8,00,000+ for a feature-rich enterprise app. Nevatrix provides a detailed cost breakdown before starting. Contact us for a free estimate." },
+        { question: "Does Nevatrix build both Android and iOS apps?", answer: "Yes. Nevatrix builds cross-platform mobile apps using React Native and Flutter, which run natively on both Android and iOS from a single codebase — reducing development time and cost by up to 40% compared to building separate native apps." },
+        { question: "How long does it take to build a mobile app?", answer: "A simple mobile app MVP takes 6–10 weeks. A feature-rich app with backend, admin panel and third-party integrations takes 3–6 months. Nevatrix provides a phased delivery timeline with milestones so you can launch faster with a lean MVP." },
+        { question: "Does Nevatrix develop on-demand apps like food delivery or taxi apps?", answer: "Yes. Nevatrix has experience building on-demand service apps including food delivery, grocery delivery, home services, ride-booking and e-commerce apps with real-time tracking, push notifications and payment gateway integration." },
+        { question: "Will my app be published on the App Store and Google Play?", answer: "Yes. Nevatrix handles the complete app store submission process for both Google Play Store and Apple App Store including store listing optimisation, screenshots, descriptions and compliance with store guidelines." },
+        { question: "Does Nevatrix offer app maintenance after launch?", answer: "Yes. We provide post-launch support including OS version updates, bug fixes, performance monitoring and feature additions to keep your app current and highly rated on the app stores." },
+    ],
+    "ecommerce": [
+        { question: "Which is the best ecommerce development company in Warangal?", answer: "Nevatrix is a leading ecommerce website development company in Warangal building Shopify, WooCommerce and custom ecommerce platforms. We have built online stores for retailers, manufacturers and service businesses across Telangana and India." },
+        { question: "Should I choose Shopify, WooCommerce or a custom store?", answer: "Shopify is best for businesses that want a quick, low-maintenance store. WooCommerce suits businesses already on WordPress. A custom ecommerce platform is ideal when you need unique workflows, large catalogues or deep third-party integrations. Nevatrix advises the best fit for your specific needs and budget." },
+        { question: "Does Nevatrix integrate payment gateways?", answer: "Yes. We integrate all major Indian and international payment gateways including Razorpay, PayU, CCAvenue, Stripe and PayPal. We also set up UPI, net banking and EMI payment options to maximise checkout conversions." },
+        { question: "How much does an ecommerce website cost in India?", answer: "A basic Shopify or WooCommerce store starts from ₹20,000. A custom ecommerce platform with full inventory management, multi-vendor support and analytics ranges from ₹60,000–₹3,00,000+. Contact Nevatrix for a free, itemised quote." },
+        { question: "Does Nevatrix provide ecommerce SEO?", answer: "Yes. Every ecommerce store Nevatrix builds is optimised for search engines from day one — including product schema, fast page speeds, keyword-rich category pages, canonical tags and structured data to help your products rank on Google." },
+        { question: "Can Nevatrix build a multi-vendor marketplace?", answer: "Yes. Nevatrix builds multi-vendor marketplace platforms similar to Amazon or Flipkart where multiple sellers can list products, manage inventory and receive payouts — with a commission-based revenue model for the platform owner." },
+    ],
+    "ai-solutions": [
+        { question: "What AI services does Nevatrix offer?", answer: "Nevatrix offers custom AI application development, AI chatbots and virtual assistants, business process automation, LLM integrations (GPT-4, Claude, Gemini), RAG (Retrieval-Augmented Generation) systems, predictive analytics, computer vision and AI-powered web and mobile apps." },
+        { question: "How can AI help my small business in Warangal?", answer: "AI can help your Warangal business by automating repetitive tasks, providing 24/7 customer support through chatbots, generating leads automatically, analysing customer data for insights and personalising marketing — all reducing costs while increasing revenue." },
+        { question: "Does Nevatrix build WhatsApp AI chatbots?", answer: "Yes. Nevatrix builds AI-powered WhatsApp chatbots using the WhatsApp Business API and LLMs like GPT-4. These bots handle customer queries, qualify leads, take orders and send automated follow-ups — working 24/7 without human intervention." },
+        { question: "What is RAG and does Nevatrix build RAG applications?", answer: "RAG (Retrieval-Augmented Generation) is a technique where an AI model answers questions using your own business documents, knowledge base or database — rather than general internet knowledge. Nevatrix builds custom RAG applications for customer support, internal knowledge management and document Q&A." },
+        { question: "How much does custom AI development cost in India?", answer: "A simple AI chatbot or automation script starts from ₹30,000. A full AI-powered web application with LLM integration, vector database and custom training starts from ₹1,50,000. Enterprise AI platforms are priced on scope. Contact Nevatrix for a free discovery call and estimate." },
+        { question: "Does Nevatrix do LLM fine-tuning?", answer: "Yes. Nevatrix provides LLM fine-tuning services using your business data to create specialised AI models that understand your industry terminology, products and customer language — delivering far more accurate responses than generic models." },
+        { question: "Can AI replace my customer support team?", answer: "AI can handle 60–80% of routine customer queries automatically — answering FAQs, tracking orders, booking appointments and qualifying leads — while escalating complex issues to human agents. This reduces support costs significantly while improving response times to under 1 second." },
+    ],
+};
+
+// ─────────────────────────────────────────────────────────────────
 // HOMEPAGE FAQ — rich accordion results in Google Search
 // 12 FAQs covering all services, local SEO, pricing, global reach
 // ─────────────────────────────────────────────────────────────────
@@ -543,11 +601,12 @@ export default function SEO({
         },
     };
 
-    // ── FAQ Schema ─────────────────────────────────────────────────
+    // ── FAQ Schema — use per-service FAQ if available, else homepage FAQ ──
+    const faqItems = (page && SERVICE_FAQ[page]) ? SERVICE_FAQ[page] : FAQ_ITEMS;
     const faqSchema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: FAQ_ITEMS.map((item) => ({
+        mainEntity: faqItems.map((item) => ({
             "@type": "Question",
             name: item.question,
             acceptedAnswer: { "@type": "Answer", text: item.answer },
