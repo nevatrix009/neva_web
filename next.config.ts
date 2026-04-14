@@ -2,14 +2,20 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  trailingSlash: false,
 
   async redirects() {
     return [
-      // Fix: /Contact (old capital-C URL indexed by Google) → /contact
       {
-        source: "/Contact",
+        source: "/contact",
         destination: "/contact",
-        permanent: true, // 301 — passes SEO link equity to the correct URL
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.nevatrix.com" }],
+        destination: "https://nevatrix.com/:path*",
+        permanent: true,
       },
     ];
   },
