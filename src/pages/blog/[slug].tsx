@@ -369,7 +369,7 @@ export default function BlogPostPage({ post }: { post: BlogPost | null }) {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link
-                                href="/contact"
+                                href="/Contact"
                                 className="cta-btn-main inline-flex items-center justify-center gap-2 text-white font-semibold px-8 py-4 rounded-xl shadow-lg"
                                 style={{ background: accent }}
                             >
