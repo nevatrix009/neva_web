@@ -19,9 +19,6 @@ export default function ContactPage() {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
 
-    const GOOGLE_SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycby-i9hFnR0defPhsi8Hsx4-T_rccaGOCAzP0BU_vIZ8mnO1B8PCvPCK5kjDx1Z0zoeN/exec";
-
     const handleChange = (e: any) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
@@ -33,30 +30,20 @@ export default function ContactPage() {
         setError(false);
 
         try {
-            const formBody = new URLSearchParams({
-                name: form.name,
-                email: form.email,
-                phone: form.phone,
-                service: form.service,
-                country: form.country,
-                message: form.message,
-            });
-
-            await fetch(GOOGLE_SCRIPT_URL, {
+            const res = await fetch("/api/contacts", {
                 method: "POST",
-                body: formBody,
-                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
             });
 
-            setSuccess(true);
-            setForm({
-                name: "",
-                email: "",
-                phone: "",
-                service: "",
-                country: "",
-                message: "",
-            });
+            const data = await res.json();
+
+            if (data.success) {
+                setSuccess(true);
+                setForm({ name: "", email: "", phone: "", service: "", country: "", message: "" });
+            } else {
+                setError(true);
+            }
         } catch (err) {
             setError(true);
         }
