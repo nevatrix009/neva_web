@@ -18,6 +18,10 @@ export default function ContactPage() {
 
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
+
+    const GOOGLE_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycby-i9hFnR0defPhsi8Hsx4-T_rccaGOCAzP0BU_vIZ8mnO1B8PCvPCK5kjDx1Z0zoeN/exec";
 
     const handleChange = (e: any) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -27,31 +31,35 @@ export default function ContactPage() {
         e.preventDefault();
         setLoading(true);
         setSuccess(false);
+        setError(false);
 
         try {
-            const res = await fetch("/api/contacts", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(form),
+            const formBody = new URLSearchParams({
+                name: form.name,
+                email: form.email,
+                phone: form.phone,
+                service: form.service,
+                country: form.country,
+                message: form.message,
             });
 
-            const data = await res.json();
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                body: formBody,
+                mode: "no-cors",
+            });
 
-            if (data.success) {
-                setSuccess(true);
-                setForm({
-                    name: "",
-                    email: "",
-                    phone: "",
-                    service: "",
-                    country: "",
-                    message: "",
-                });
-            }
+            setSuccess(true);
+            setForm({
+                name: "",
+                email: "",
+                phone: "",
+                service: "",
+                country: "",
+                message: "",
+            });
         } catch (err) {
-            alert("Failed to send message");
+            setError(true);
         }
 
         setLoading(false);
@@ -345,6 +353,11 @@ export default function ContactPage() {
                                 {success && (
                                     <p className="text-green-600 font-medium text-center">
                                         ✅ Message sent successfully! We will contact you soon.
+                                    </p>
+                                )}
+                                {error && (
+                                    <p className="text-red-600 font-medium text-center">
+                                        ❌ Failed to send message. Please try again or email us directly.
                                     </p>
                                 )}
                             </form>
