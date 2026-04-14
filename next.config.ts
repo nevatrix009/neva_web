@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  output: "export",   // generates static HTML — works on GitHub Pages
+  trailingSlash: true, // creates contact/index.html instead of contact.html
 
   async redirects() {
     return [
