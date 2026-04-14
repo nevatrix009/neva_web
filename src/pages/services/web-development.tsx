@@ -1,4 +1,3 @@
-"use client";
 
 // ── SEO metadata lives in app/services/web-development/layout.tsx ──
 // export const metadata: Metadata = {

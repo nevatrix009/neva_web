@@ -1,4 +1,3 @@
-"use client";
 
 // ── SEO metadata in app/services/full-stack/layout.tsx ──
 // export const metadata: Metadata = {

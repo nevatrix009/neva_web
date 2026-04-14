@@ -1,4 +1,3 @@
-"use client";
 
 import Link from "next/link";
 import { ArrowRight, Home, Phone, Mail } from "lucide-react";
