@@ -264,7 +264,7 @@ export default function BlogIndex() {
                             Nevatrix is the leading web development and SEO company in Warangal, Telangana.
                             Get a free consultation and quote today.
                         </p>
-                        <Link href="/contact"
+                        <Link href="/Contact"
                             className="cta-btn inline-flex items-center gap-2 text-white font-semibold px-8 py-4 rounded-xl shadow-lg"
                             style={{ background: "#2563EB" }}>
                             Get a Free Quote <ArrowRight size={16} />
