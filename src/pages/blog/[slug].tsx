@@ -80,7 +80,7 @@ function renderSection(section: BlogSection, idx: number, accent: string) {
             return (
                 <div key={idx} className="my-8 text-center">
                     <Link
-                        href={section.ctaHref || "/contact"}
+                        href={section.ctaHref || "/Contact"}
                         className="inline-flex items-center gap-2 text-white font-semibold px-8 py-3 rounded-xl transition hover:-translate-y-0.5"
                         style={{ background: accent }}
                     >
