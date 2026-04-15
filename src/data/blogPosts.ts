@@ -959,6 +959,129 @@ const blogPosts: BlogPost[] = [
             { text: "Digital Marketing Strategy Guide", href: "/blog/digital-marketing-strategy-small-business-india-2026" },
         ],
     },
+
+    // ────────────────────────────────────────────────────────────
+    // POST 11: What Indian SMBs Get Wrong About Online Presence
+    // Medium Article 1 canonical target
+    // ────────────────────────────────────────────────────────────
+    {
+        slug: "what-indian-smbs-get-wrong-online-presence",
+        title: "I Built 100+ Websites in Warangal — Here's What Indian SMBs Get Wrong About Their Online Presence",
+        metaDescription:
+            "12 years of building websites in Warangal taught us the most common digital mistakes Indian small businesses make — and how to fix them. From ignoring mobile to skipping Google Business Profile.",
+        keywords:
+            "indian small business website mistakes, google business profile india, seo mistakes india, website design mistakes india, digital presence india, small business website india, online presence india, website tips india, web development warangal, digital marketing mistakes india",
+        date: "2026-04-15",
+        author: "Nevatrix Team",
+        category: "Web Development",
+        readTime: "6 min read",
+        excerpt:
+            "After building 100+ websites for businesses in Warangal and Telangana, we have seen the same mistakes repeated over and over. Here are the 6 most costly digital presence mistakes Indian SMBs make — and exactly how to fix each one.",
+        content: [
+            { type: "p", text: "I have been building websites for businesses in Warangal, Telangana since 2012. In that time, I have sat across the table from hundreds of business owners — doctors, retailers, school principals, manufacturers, restaurant owners, lawyers — and watched them make the same mistakes with their online presence, over and over. This is not a sales pitch. It is a list of things I wish someone had told these business owners before they wasted money, time and opportunity." },
+            { type: "h2", text: "Mistake 1: Treating the Website as a One-Time Expense" },
+            { type: "p", text: "The most common mindset: 'We got a website made in 2018, we're sorted.' A website is not a hoarding you print once and hang forever. Google updates its algorithm 500+ times per year. Mobile screen sizes change. Browsers evolve. Your competitors keep improving. A website that was good in 2018 is invisible in 2026. The businesses winning online treat their website the way they treat their shop — constantly updating and improving it. At minimum, update your content every 3–4 months and do a full audit every year." },
+            { type: "h2", text: "Mistake 2: No Google Business Profile" },
+            { type: "p", text: "If you serve customers in a specific city and do not have a verified Google Business Profile, you are handing customers to your competitors every single day. When someone searches 'dentist in Warangal' or 'AC repair near me Hanamkonda', the first result is a map with 3 local businesses — the local 3-pack. This appears above all organic website results. It is prime real estate, and it is completely free. Setting it up takes 30 minutes. Yet most small businesses in Tier-2 India have not done it." },
+            { type: "h2", text: "Mistake 3: Building a Website for the Owner, Not the Customer" },
+            { type: "p", text: "Your homepage has approximately 8 seconds to answer the visitor's core question: Can you solve my problem? Every element should serve the customer's decision-making process. The best-converting websites follow this structure: Hero with a clear headline and one CTA → Trust signals (years in business, client count, testimonials) → Services clearly explained → Why you are different → Contact details visible without scrolling." },
+            { type: "h2", text: "Mistake 4: Ignoring Mobile" },
+            { type: "p", text: "In India, over 70% of web traffic comes from mobile devices. Google uses mobile-first indexing — meaning it ranks the mobile version of your website. A website that looks terrible on mobile does not just lose customers — it loses Google rankings. Every website we build at Nevatrix is designed mobile-first and tested on actual Android and iOS devices." },
+            { type: "h2", text: "Mistake 5: No SEO — Building a Website Nobody Finds" },
+            { type: "p", text: "Getting a website built without doing SEO is like opening a shop with no signboard. The shop is beautiful. Nobody knows it exists. SEO makes your website appear when someone searches for your service on Google. For a local business, this means using location-specific keywords on every page, publishing regular content, getting listed on directories and earning backlinks from other websites." },
+            { type: "h2", text: "Mistake 6: Choosing the Cheapest Developer" },
+            { type: "p", text: "The cost of a bad website is not just the money you paid — it is every customer who visited, saw a broken page and left. It is every Google ranking lost because of slow load time. A professionally built website starts from ₹8,000–₹15,000. That is a one-time investment that works for your business 24/7 for the next 3–5 years. It is the cheapest salesperson you will ever hire." },
+            { type: "h2", text: "What the Winning Businesses Do Differently" },
+            { type: "ul", items: [
+                "Update website content at least quarterly",
+                "Actively collect and respond to Google reviews",
+                "Post consistently on at least one social media platform",
+                "Track website analytics and act on the data",
+                "Treat digital marketing as an ongoing investment, not a one-time cost",
+            ]},
+            { type: "cta", ctaLabel: "Get a Free Website Audit for Your Business", ctaHref: "/contact" },
+        ],
+        faq: [
+            { q: "What is the most important digital marketing step for a small business in India?", a: "Creating and optimising a Google Business Profile is the single highest-ROI action for any local business in India. It puts you on Google Maps and in the local 3-pack search results — completely free — and directly drives local customer calls and visits." },
+            { q: "How often should I update my business website?", a: "Update your website content at least every 3–4 months. Add new blog posts or service updates monthly. Google rewards fresh, regularly updated content with higher rankings. Do a full design and performance audit every 12–18 months." },
+            { q: "Why is my website not showing on Google?", a: "Common reasons include: no SEO optimisation (missing keywords, meta tags), website not submitted to Google Search Console, no backlinks from other websites, slow page speed, or the website was built on a platform Google cannot crawl properly. Contact Nevatrix for a free SEO audit." },
+        ],
+        internalLinks: [
+            { text: "Web Development Services", href: "/services/web-development" },
+            { text: "Digital Marketing Services", href: "/services/digital-marketing" },
+            { text: "SEO Guide for Warangal Businesses", href: "/blog/seo-services-warangal-guide" },
+        ],
+    },
+
+    // ────────────────────────────────────────────────────────────
+    // POST 12: Next.js vs WordPress India 2026
+    // Medium Article 2 canonical target
+    // ────────────────────────────────────────────────────────────
+    {
+        slug: "nextjs-vs-wordpress-india-2026",
+        title: "Next.js vs WordPress in India 2026 — Which Should You Choose for Your Business Website?",
+        metaDescription:
+            "Next.js or WordPress — which is the right choice for your business website in India in 2026? This complete comparison covers performance, SEO, cost, maintenance and when to choose each for Indian businesses.",
+        keywords:
+            "nextjs vs wordpress india, react vs wordpress india, wordpress vs nextjs 2026, which is better nextjs or wordpress, wordpress alternative india, nextjs website india, wordpress website india, best website platform india, web development technology india, modern website development india",
+        date: "2026-04-15",
+        author: "Nevatrix Team",
+        category: "Web Development",
+        readTime: "7 min read",
+        excerpt:
+            "We have built websites in both WordPress and Next.js for clients across India. Here is an honest, technical comparison — covering performance, SEO, cost, scalability and maintenance — so you can choose the right platform for your specific business needs.",
+        content: [
+            { type: "p", text: "One of the most common questions we get from business owners in Warangal and across India: 'Should my new website be built on WordPress or something more modern like Next.js?' The honest answer depends on your specific situation. Both have clear strengths. Both have real limitations. After building websites in both for clients across India, here is our complete comparison." },
+            { type: "h2", text: "What is WordPress?" },
+            { type: "p", text: "WordPress powers 43% of all websites on the internet. It is a content management system (CMS) built on PHP that lets non-technical users update their website without touching code. Its plugin ecosystem (60,000+ plugins) means you can add almost any feature without custom development. For most business websites, blogs, portfolios and simple ecommerce stores, WordPress is mature, reliable and cost-effective." },
+            { type: "h2", text: "What is Next.js?" },
+            { type: "p", text: "Next.js is a modern React framework built by Vercel. It renders pages as static HTML or server-side, making it significantly faster than WordPress on default settings. It has no plugin ecosystem — everything is custom-coded. It requires JavaScript developers to build and maintain. It is the technology powering websites for companies like TikTok, Twitch, Hulu and thousands of SaaS products globally." },
+            { type: "h2", text: "Performance — Next.js Wins Clearly" },
+            { type: "p", text: "A well-optimised Next.js website consistently scores 95–100 on Google PageSpeed Insights. An average WordPress website (with a theme and 10–15 plugins) scores 40–70. Performance matters enormously for SEO — Google's Core Web Vitals are a direct ranking factor. If your competitors have faster websites, they will outrank you over time, all else being equal. For businesses in Warangal targeting competitive keywords, a faster website is a genuine ranking advantage." },
+            { type: "h2", text: "SEO — Both Can Rank Well, But Differently" },
+            { type: "p", text: "WordPress with the Yoast or Rank Math plugin gives non-technical users easy control over SEO settings. Next.js requires SEO to be implemented in code — but done well, it is more precise and powerful. At Nevatrix, every Next.js website we build includes server-side rendering, schema markup, canonical tags, Open Graph tags and sitemap generation built directly into the codebase — no plugin dependency." },
+            { type: "h2", text: "Cost Comparison for Indian Businesses" },
+            { type: "ul", items: [
+                "WordPress basic website: ₹8,000 – ₹25,000 (lower development cost)",
+                "Next.js basic website: ₹20,000 – ₹60,000 (higher development cost)",
+                "WordPress hosting: ₹2,000 – ₹8,000/year (shared) or ₹15,000+/year (managed)",
+                "Next.js hosting on Vercel: Free tier available → ₹1,700/month for Pro",
+                "WordPress ongoing maintenance: Higher (plugin updates, security patches, theme conflicts)",
+                "Next.js ongoing maintenance: Lower (fewer dependencies, no plugin conflicts)",
+            ]},
+            { type: "h2", text: "When to Choose WordPress" },
+            { type: "ul", items: [
+                "Budget is under ₹15,000 and you need a site quickly",
+                "You or your team will update content frequently without developer help",
+                "You need a blog with advanced content editing features",
+                "You need a simple WooCommerce store with standard features",
+                "Your business does not require custom functionality beyond standard plugins",
+            ]},
+            { type: "h2", text: "When to Choose Next.js" },
+            { type: "ul", items: [
+                "Performance and Google rankings are a priority",
+                "You need custom functionality that plugins cannot handle",
+                "You are building a SaaS product, web application or portal",
+                "You want a unique design that no WordPress theme can achieve",
+                "You are planning to scale traffic significantly (Next.js handles high traffic better)",
+                "Long-term maintenance cost matters more than upfront development cost",
+            ]},
+            { type: "h2", text: "Our Recommendation for Indian Businesses in 2026" },
+            { type: "p", text: "For a simple business website or blog with a limited budget — WordPress is absolutely fine and will serve you well. For any business serious about SEO rankings, performance, unique design or custom features — Next.js is the better long-term investment. The higher upfront cost pays for itself through lower maintenance costs, better rankings and a faster user experience. At Nevatrix, we build in both — and recommend the right tool for each specific client's needs and budget." },
+            { type: "cta", ctaLabel: "Get Expert Advice on the Right Platform for Your Website", ctaHref: "/contact" },
+        ],
+        faq: [
+            { q: "Is Next.js better than WordPress for SEO in India?", a: "Next.js can achieve better SEO performance than WordPress when implemented correctly, primarily due to faster page load times and more precise control over technical SEO. However, a well-optimised WordPress site with a good SEO plugin can also rank very well. Performance (Core Web Vitals) is the main area where Next.js has a consistent advantage." },
+            { q: "Can a non-technical person update a Next.js website?", a: "Not without developer help for code changes. However, a Next.js website can be connected to a headless CMS (like Sanity, Contentful or Notion) that gives non-technical users a friendly editor for content updates, while the website remains on Next.js." },
+            { q: "How much more does a Next.js website cost compared to WordPress in India?", a: "A Next.js website typically costs 2–3× more to develop than a comparable WordPress website in India. However, ongoing maintenance costs are generally lower, and the performance benefits can deliver higher Google rankings and more organic traffic over time." },
+            { q: "Does Nevatrix build both WordPress and Next.js websites?", a: "Yes. Nevatrix builds websites in both WordPress and Next.js depending on the client's budget, requirements and goals. We advise honestly on which platform suits each specific situation rather than pushing one technology." },
+        ],
+        internalLinks: [
+            { text: "Web Development Services", href: "/services/web-development" },
+            { text: "Full Stack Development", href: "/services/full-stack" },
+            { text: "Website Cost in India 2026", href: "/blog/website-development-cost-india-2026" },
+        ],
+    },
 ];
 
 export default blogPosts;
