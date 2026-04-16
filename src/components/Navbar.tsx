@@ -109,7 +109,7 @@ export default function Navbar() {
                     {/* Contact CTA */}
                     <li>
                         <Link
-                            href="/Contact"
+                            href="/contact"
                             className="flex items-center gap-2 px-5 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md hover:shadow-xl hover:scale-105 transition"
                         >
                             <EnvelopeIcon className="w-5 h-5" />

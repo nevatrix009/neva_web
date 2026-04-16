@@ -78,7 +78,7 @@ function renderSection(section: BlogSection, idx: number, accent: string) {
             return (
                 <div key={idx} className="my-8 text-center">
                     <Link
-                        href={section.ctaHref || "/Contact"}
+                        href={section.ctaHref || "/contact"}
                         className="inline-flex items-center gap-2 text-white font-semibold px-8 py-3 rounded-xl transition hover:-translate-y-0.5"
                         style={{ background: accent }}
                     >
@@ -133,6 +133,14 @@ export default function BlogPostPage({ post }: { post: BlogPost | null }) {
 
     const accent = CATEGORY_COLOR[post.category] || "#2563EB";
     const canonicalUrl = `https://nevatrix.com/blog/${post.slug}`;
+
+    // Page title: keep under 65 chars — strip subtitle after " — "
+    const rawTitle = post.title.includes(" — ")
+        ? post.title.split(" — ")[0].trim()
+        : post.title.length > 52
+        ? post.title.substring(0, 52).trim()
+        : post.title;
+    const pageTitle = `${rawTitle} | Nevatrix`;
     const ogImage = "https://nevatrix.com/og-image.jpg";
 
     // ── Article JSON-LD ──
@@ -186,7 +194,7 @@ export default function BlogPostPage({ post }: { post: BlogPost | null }) {
     return (
         <>
             <Head>
-                <title>{post.title} | Nevatrix Blog</title>
+                <title>{pageTitle}</title>
                 <meta name="description" content={post.metaDescription} />
                 <meta name="keywords" content={post.keywords} />
                 <meta name="author" content="Nevatrix Technologies Pvt. Ltd." />
@@ -369,7 +377,7 @@ export default function BlogPostPage({ post }: { post: BlogPost | null }) {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link
-                                href="/Contact"
+                                href="/contact"
                                 className="cta-btn-main inline-flex items-center justify-center gap-2 text-white font-semibold px-8 py-4 rounded-xl shadow-lg"
                                 style={{ background: accent }}
                             >

@@ -1,23 +1,125 @@
+# ============================================================
+# robots.txt — Nevatrix Technologies Pvt. Ltd.
+# https://nevatrix.com
+# Updated: April 2026
+# ============================================================
+
+
+# ── Allow all legitimate crawlers ──────────────────────────
 User-agent: *
 Allow: /
 
-# Block Next.js internals
+# Block Next.js internals (never indexable)
 Disallow: /_next/
 Disallow: /api/
 
-# Block duplicate/utility pages
+# Block utility / error pages
 Disallow: /404
 Disallow: /500
 
-# Allow major crawlers explicitly
+# Block any future admin or private routes
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+
+
+# ── Google ─────────────────────────────────────────────────
 User-agent: Googlebot
 Allow: /
+Disallow: /_next/
+Disallow: /api/
 
-User-agent: Bingbot
+User-agent: Googlebot-Image
 Allow: /
 
+User-agent: Googlebot-Video
+Allow: /
+
+
+# ── Bing ───────────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+
+
+# ── Other major search engines ─────────────────────────────
 User-agent: Slurp
 Allow: /
 
-# Sitemap location
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+
+# ── AI crawlers (allow for brand visibility) ───────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+
+# ── Block known bad bots and scrapers ──────────────────────
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: serpstatbot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+
+# ── Sitemap ────────────────────────────────────────────────
 Sitemap: https://nevatrix.com/sitemap.xml

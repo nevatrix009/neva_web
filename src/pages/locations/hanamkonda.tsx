@@ -34,7 +34,7 @@ export default function HanamkondaPage() {
     return (
         <>
             <Head>
-                <title>Web Development Company in Hanamkonda | SEO & Digital Marketing — Nevatrix</title>
+                <title>Web Development Company in Hanamkonda | Nevatrix</title>
                 <meta name="description" content="Nevatrix is the best web development and digital marketing company serving Hanamkonda, Telangana. We build custom websites, ecommerce stores, mobile apps and provide SEO services for businesses in Hanamkonda, Warangal and the WHK area." />
                 <meta name="keywords" content="web development company hanamkonda, website design hanamkonda, digital marketing agency hanamkonda, seo services hanamkonda, web designers hanamkonda, mobile app development hanamkonda, it company hanamkonda, ecommerce development hanamkonda, website designers near me hanamkonda, web development company near me hanamkonda, best web developers hanamkonda, website development warangal hanamkonda, digital marketing warangal hanamkonda, seo company hanamkonda telangana" />
                 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />

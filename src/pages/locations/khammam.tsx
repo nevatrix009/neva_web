@@ -34,7 +34,7 @@ export default function KhammamPage() {
     return (
         <>
             <Head>
-                <title>Web Development Company in Khammam | SEO & Digital Marketing — Nevatrix</title>
+                <title>Web Development Company in Khammam | Nevatrix</title>
                 <meta name="description" content="Nevatrix provides web development, SEO and digital marketing services for businesses in Khammam, Telangana. Custom websites, mobile apps and AI solutions delivered by Telangana's leading IT company." />
                 <meta name="keywords" content="web development company khammam, website design khammam, digital marketing agency khammam, seo services khammam, web designers khammam, mobile app development khammam, it company khammam telangana, ecommerce development khammam, website development company near me khammam, best web developers khammam, digital marketing company khammam, seo company khammam, website designers near me khammam" />
                 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
