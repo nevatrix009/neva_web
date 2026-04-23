@@ -23,6 +23,19 @@ export default function Document() {
 
                 {/* ── PWA manifest (create /public/manifest.json when ready) ── */}
                 {/* <link rel="manifest" href="/manifest.json" /> */}
+
+                {/* ── Google Analytics ── */}
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPKXBMVY42" />
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', 'G-RPKXBMVY42');
+                        `,
+                    }}
+                />
             </Head>
             <body>
                 <Main />

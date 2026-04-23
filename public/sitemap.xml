@@ -8,7 +8,7 @@
 <!-- ══ Homepage ══ -->
 <url>
   <loc>https://nevatrix.com/</loc>
-  <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-17T00:00:00+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1.00</priority>
 </url>
@@ -16,19 +16,19 @@
 <!-- ══ Core Pages ══ -->
 <url>
   <loc>https://nevatrix.com/about</loc>
-  <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-17T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://nevatrix.com/contact</loc>
-  <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-17T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://nevatrix.com/careers</loc>
-  <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-17T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.50</priority>
 </url>
@@ -36,37 +36,37 @@
 <!-- ══ Service Pages ══ -->
 <url>
   <loc>https://nevatrix.com/services/web-development</loc>
-  <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-17T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
 </url>
 <url>
   <loc>https://nevatrix.com/services/digital-marketing</loc>
-  <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-17T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
 </url>
 <url>
   <loc>https://nevatrix.com/services/full-stack</loc>
-  <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-17T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.85</priority>
 </url>
 <url>
   <loc>https://nevatrix.com/services/mobile-app</loc>
-  <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-17T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.85</priority>
 </url>
 <url>
   <loc>https://nevatrix.com/services/ecommerce</loc>
-  <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-17T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.85</priority>
 </url>
 <url>
   <loc>https://nevatrix.com/services/ai-solutions</loc>
-  <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-17T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.85</priority>
 </url>
@@ -74,13 +74,13 @@
 <!-- ══ Location Pages ══ -->
 <url>
   <loc>https://nevatrix.com/locations/hanamkonda</loc>
-  <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-17T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://nevatrix.com/locations/khammam</loc>
-  <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-17T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.75</priority>
 </url>
@@ -88,7 +88,7 @@
 <!-- ══ Blog Index ══ -->
 <url>
   <loc>https://nevatrix.com/blog</loc>
-  <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-17T00:00:00+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.75</priority>
 </url>
@@ -126,7 +126,7 @@
 </url>
 <url>
   <loc>https://nevatrix.com/blog/digital-marketing-strategy-small-business-india-2026</loc>
-  <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-17T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.72</priority>
 </url>

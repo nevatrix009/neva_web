@@ -101,7 +101,6 @@ const PAGE_DATA: Record<
         service: "Website Development",
         breadcrumb: [
             { name: "Home", url: "https://nevatrix.com" },
-            { name: "Services", url: "https://nevatrix.com/services/web-development" },
             { name: "Web Development", url: "https://nevatrix.com/services/web-development" },
         ],
         hasLayoutMetadata: false,
@@ -118,12 +117,11 @@ const PAGE_DATA: Record<
         description:
             "Nevatrix is the best digital marketing agency in Warangal, Telangana. We offer SEO, Google Ads, social media marketing, influencer marketing, email marketing and lead generation for businesses across Warangal, Hanamkonda, Hyderabad and India.",
         keywords:
-            "digital marketing agency in warangal,digital marketing services in warangal, digital marketing company warangal, seo company in warangal, seo services warangal, seo agency warangal, digital marketing agency near me, top digital marketing agency near me, seo company near me warangal, best digital marketing agency warangal, best seo company in warangal, top digital marketing company warangal, google ads agency warangal, google ads management warangal, ppc agency warangal, social media marketing warangal, social media marketing agency warangal, facebook ads agency warangal, instagram marketing warangal, influencer marketing warangal, affiliate marketing services warangal, email marketing warangal, email marketing campaigns india, whatsapp marketing warangal, video marketing warangal, online reputation management warangal, orm services warangal, mobile marketing services india, local seo warangal, local seo services warangal, lead generation services warangal, content marketing warangal, digital marketing agency hanamkonda, seo services hanamkonda, digital marketing company khammam, seo agency nizamabad, digital marketing karimnagar, digital marketing agency hyderabad, seo company hyderabad, digital marketing agency telangana, digital marketing services india, affordable seo services india, result driven digital marketing warangal, ai driven digital marketing india",
+            "digital marketing agency in warangal, digital marketing services in warangal, digital marketing company warangal, seo company in warangal, seo services warangal, seo agency warangal, digital marketing agency near me, top digital marketing agency near me, seo company near me warangal, best digital marketing agency warangal, best seo company in warangal, top digital marketing company warangal, google ads agency warangal, google ads management warangal, ppc agency warangal, social media marketing warangal, social media marketing agency warangal, facebook ads agency warangal, instagram marketing warangal, influencer marketing warangal, affiliate marketing services warangal, email marketing warangal, email marketing campaigns india, whatsapp marketing warangal, video marketing warangal, online reputation management warangal, orm services warangal, mobile marketing services india, local seo warangal, local seo services warangal, lead generation services warangal, content marketing warangal, digital marketing agency hanamkonda, seo services hanamkonda, digital marketing company khammam, seo agency nizamabad, digital marketing karimnagar, digital marketing agency hyderabad, seo company hyderabad, digital marketing agency telangana, digital marketing services india, affordable seo services india, result driven digital marketing warangal, ai driven digital marketing india",
         url: "https://nevatrix.com/services/digital-marketing",
         service: "Digital Marketing Services",
         breadcrumb: [
             { name: "Home", url: "https://nevatrix.com" },
-            { name: "Services", url: "https://nevatrix.com/services/digital-marketing" },
             { name: "Digital Marketing", url: "https://nevatrix.com/services/digital-marketing" },
         ],
         hasLayoutMetadata: false,
@@ -144,7 +142,6 @@ const PAGE_DATA: Record<
         service: "Full Stack Development",
         breadcrumb: [
             { name: "Home", url: "https://nevatrix.com" },
-            { name: "Services", url: "https://nevatrix.com/services/full-stack" },
             { name: "Full Stack Development", url: "https://nevatrix.com/services/full-stack" },
         ],
         hasLayoutMetadata: false,
@@ -165,7 +162,6 @@ const PAGE_DATA: Record<
         service: "Mobile App Development",
         breadcrumb: [
             { name: "Home", url: "https://nevatrix.com" },
-            { name: "Services", url: "https://nevatrix.com/services/mobile-app" },
             { name: "Mobile App Development", url: "https://nevatrix.com/services/mobile-app" },
         ],
         hasLayoutMetadata: false,
@@ -184,7 +180,6 @@ const PAGE_DATA: Record<
         service: "Ecommerce Development",
         breadcrumb: [
             { name: "Home", url: "https://nevatrix.com" },
-            { name: "Services", url: "https://nevatrix.com/services/ecommerce" },
             { name: "Ecommerce Development", url: "https://nevatrix.com/services/ecommerce" },
         ],
         hasLayoutMetadata: false,
@@ -205,7 +200,6 @@ const PAGE_DATA: Record<
         service: "AI Software Development",
         breadcrumb: [
             { name: "Home", url: "https://nevatrix.com" },
-            { name: "Services", url: "https://nevatrix.com/services/ai-solutions" },
             { name: "AI Solutions", url: "https://nevatrix.com/services/ai-solutions" },
         ],
         hasLayoutMetadata: false,
@@ -458,7 +452,7 @@ export default function SEO({
         keywords:    keywords    || baseData.keywords,
         url:         url         || baseData.url,
         service:     baseData.service,
-        image:       image       || "https://nevatrix.com/og-image.jpg",
+        image:       image       || "https://nevatrix.com/Nevatrix_logo.png",
     };
 
     // ── Organization Schema ────────────────────────────────────────
@@ -602,14 +596,6 @@ export default function SEO({
         publisher: {
             "@type": "Organization",
             "@id": "https://nevatrix.com/#organization",
-        },
-        potentialAction: {
-            "@type": "SearchAction",
-            target: {
-                "@type": "EntryPoint",
-                urlTemplate: "https://nevatrix.com/search?q={search_term_string}",
-            },
-            "query-input": "required name=search_term_string",
         },
     };
 

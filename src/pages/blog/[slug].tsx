@@ -141,7 +141,7 @@ export default function BlogPostPage({ post }: { post: BlogPost | null }) {
         ? post.title.substring(0, 52).trim()
         : post.title;
     const pageTitle = `${rawTitle} | Nevatrix`;
-    const ogImage = "https://nevatrix.com/og-image.jpg";
+    const ogImage = "https://nevatrix.com/Nevatrix_logo.png";
 
     // ── Article JSON-LD ──
     const articleSchema = {
@@ -163,7 +163,12 @@ export default function BlogPostPage({ post }: { post: BlogPost | null }) {
             name: "Nevatrix",
             logo: { "@type": "ImageObject", url: "https://nevatrix.com/Nevatrix_logo.png" },
         },
-        image: ogImage,
+        image: {
+            "@type": "ImageObject",
+            url: ogImage,
+            width: 300,
+            height: 60,
+        },
         mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
     };
 
@@ -200,9 +205,6 @@ export default function BlogPostPage({ post }: { post: BlogPost | null }) {
                 <meta name="author" content="Nevatrix Technologies Pvt. Ltd." />
                 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
                 <link rel="canonical" href={canonicalUrl} />
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
                 {/* Open Graph */}
                 <meta property="og:type" content="article" />
@@ -213,6 +215,8 @@ export default function BlogPostPage({ post }: { post: BlogPost | null }) {
                 <meta property="og:image" content={ogImage} />
                 <meta property="og:locale" content="en_IN" />
                 <meta property="article:published_time" content={post.date} />
+                <meta property="article:author" content="Nevatrix Technologies Pvt. Ltd." />
+                <meta property="article:section" content={post.category} />
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
