@@ -1,0 +1,39 @@
+# Nevatrix Technologies Pvt. Ltd.
+# Web Development & Digital Marketing Company in Warangal, Telangana, India
+# https://nevatrix.com
+
+## About
+Nevatrix is an AI-driven web development and digital marketing company based in Warangal, Telangana, India. Founded in 2012, we deliver custom websites, web applications, mobile apps, ecommerce solutions, AI software and digital marketing services for startups and businesses across Telangana, India, USA and Canada.
+
+## Services
+- Web Development: Custom websites, React/Next.js apps, WordPress, landing pages
+- Digital Marketing: SEO, Google Ads, Social Media Marketing, Content Marketing, Lead Generation
+- Full Stack Development: MERN stack, SaaS platforms, CRM/ERP systems, API development
+- Mobile App Development: React Native and Flutter apps for Android and iOS
+- Ecommerce Development: Shopify, WooCommerce, custom ecommerce platforms
+- AI Solutions: AI chatbots, LLM integrations, RAG systems, business process automation
+
+## Contact
+- Address: Kazipet, Warangal, Telangana 506004, India
+- Phone: +91-9989183654
+- Email: info@nevatrix.com
+- Website: https://nevatrix.com
+
+## Key Pages
+- Homepage: https://nevatrix.com
+- Digital Marketing: https://nevatrix.com/services/digital-marketing
+- Web Development: https://nevatrix.com/services/web-development
+- Full Stack Development: https://nevatrix.com/services/full-stack
+- Mobile App Development: https://nevatrix.com/services/mobile-app
+- Ecommerce Development: https://nevatrix.com/services/ecommerce
+- AI Solutions: https://nevatrix.com/services/ai-solutions
+- Blog: https://nevatrix.com/blog
+- Contact: https://nevatrix.com/contact
+
+## Social Profiles
+- LinkedIn: https://www.linkedin.com/company/nevatrix
+- Instagram: https://www.instagram.com/nevatrix
+- Facebook: https://www.facebook.com/nevatrix
+
+## Sitemap
+https://nevatrix.com/sitemap.xml

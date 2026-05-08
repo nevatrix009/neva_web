@@ -332,7 +332,7 @@ export default function FullStackPage() {
                                 serving startups and enterprises across India, USA and Canada.
                             </p>
                             <div className="fu4 flex flex-wrap gap-4">
-                                <a href="mailto:contact@nevatrix.com" className="cta-btn inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-7 py-3.5 rounded-xl font-semibold text-sm shadow-lg shadow-indigo-900/40">
+                                <a href="mailto:info@nevatrix.com" className="cta-btn inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-7 py-3.5 rounded-xl font-semibold text-sm shadow-lg shadow-indigo-900/40">
                                     Discuss Your Project <ArrowRight size={15} />
                                 </a>
                                 <a href="#process" className="inline-flex items-center gap-2 border border-slate-600 hover:border-slate-400 text-slate-300 hover:text-white px-7 py-3.5 rounded-xl font-semibold text-sm transition">
@@ -629,7 +629,7 @@ export default function FullStackPage() {
                             Let Nevatrix build your web application or SaaS platform from scratch —
                             on time, on budget and built to scale with your business.
                         </p>
-                        <a href="mailto:contact@nevatrix.com" className="cta-btn inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-xl font-semibold shadow-xl shadow-indigo-900/50">
+                        <a href="mailto:info@nevatrix.com" className="cta-btn inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-xl font-semibold shadow-xl shadow-indigo-900/50">
                             <CheckCircle size={18} /> Get Free Consultation <ArrowRight size={16} />
                         </a>
                     </div>

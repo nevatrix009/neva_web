@@ -49,10 +49,10 @@ const COMPANY = {
         "Nevatrix is an AI-driven web development and digital marketing company in Warangal, Telangana offering website design, ecommerce development, mobile app development, full stack development and SEO services.",
     sameAs: [
         "https://www.linkedin.com/company/nevatrix",
-        // "https://www.facebook.com/nevatrix",
-        // "https://www.instagram.com/nevatrix",
-        // "https://twitter.com/nevatrix",
-        // "https://g.co/kgs/YOUR_GOOGLE_BUSINESS_ID",  ← add after creating GBP
+        "https://www.facebook.com/nevatrix",
+        "https://www.instagram.com/nevatrix",
+        "https://twitter.com/nevatrix",
+        // "https://g.co/kgs/YOUR_GOOGLE_BUSINESS_ID",  ← add after creating/verifying GBP
     ],
     address: {
         street: "Kazipet",
@@ -94,9 +94,9 @@ const PAGE_DATA: Record<
     "web-development": {
         title: "Best Web Development Company in Warangal | Nevatrix",
         description:
-            "Nevatrix is the best web development company in Warangal, Telangana. We build custom websites, responsive business websites and SEO-friendly web solutions for startups and enterprises. Serving Warangal, Hanamkonda, Khammam and across India.",
+            "Nevatrix is a web development company in Warangal offering custom websites, responsive design and SEO-friendly web solutions for businesses and startups.",
         keywords:
-            "web development company in warangal, web design company in warangal, website design company warangal, web designers in warangal, web developers in warangal, website development warangal, web designers near me, website designers near me, web design near me, best web development company in warangal, best website design in warangal, top web development company warangal, best web designers warangal, web design agency warangal, website redesign warangal, website revamp warangal, landing page design warangal, web development company hanamkonda, website design hanamkonda, web developers hanamkonda, website designing in hanamkonda, web development company khammam, website design nizamabad, web development karimnagar, wordpress website development warangal, react website development warangal, nextjs web development india, responsive website design warangal, seo friendly website development warangal, affordable website development warangal, low cost website design warangal, website development cost warangal, web development company telangana, professional website design telangana, custom website development india, website development company near me, best web development company near me",
+            "web development company in warangal, website design warangal, web developers warangal, web design company telangana, website development india, responsive website design warangal, custom web development services",
         url: "https://nevatrix.com/services/web-development",
         service: "Website Development",
         breadcrumb: [
@@ -113,11 +113,11 @@ const PAGE_DATA: Record<
     // Gap added: influencer marketing, affiliate marketing, email marketing,
     // mobile marketing, video marketing, ORM, whatsapp marketing
     "digital-marketing": {
-        title: "Digital Marketing Agency in Warangal | Nevatrix",
+        title: "Digital Marketing Agency in Warangal & Telangana | SEO, Google Ads | Nevatrix",
         description:
-            "Nevatrix is the best digital marketing agency in Warangal, Telangana. We offer SEO, Google Ads, social media marketing, influencer marketing, email marketing and lead generation for businesses across Warangal, Hanamkonda, Hyderabad and India.",
+            "Nevatrix is a top-rated digital marketing agency in Warangal, Telangana. We offer SEO, Google Ads, social media marketing, lead generation and content marketing services for businesses across Telangana and India. Get a free audit today.",
         keywords:
-            "digital marketing agency in warangal, digital marketing services in warangal, digital marketing company warangal, seo company in warangal, seo services warangal, seo agency warangal, digital marketing agency near me, top digital marketing agency near me, seo company near me warangal, best digital marketing agency warangal, best seo company in warangal, top digital marketing company warangal, google ads agency warangal, google ads management warangal, ppc agency warangal, social media marketing warangal, social media marketing agency warangal, facebook ads agency warangal, instagram marketing warangal, influencer marketing warangal, affiliate marketing services warangal, email marketing warangal, email marketing campaigns india, whatsapp marketing warangal, video marketing warangal, online reputation management warangal, orm services warangal, mobile marketing services india, local seo warangal, local seo services warangal, lead generation services warangal, content marketing warangal, digital marketing agency hanamkonda, seo services hanamkonda, digital marketing company khammam, seo agency nizamabad, digital marketing karimnagar, digital marketing agency hyderabad, seo company hyderabad, digital marketing agency telangana, digital marketing services india, affordable seo services india, result driven digital marketing warangal, ai driven digital marketing india",
+            "digital marketing agency in warangal, digital marketing company warangal, seo services warangal, google ads agency warangal, social media marketing warangal, digital marketing company telangana, local seo warangal, lead generation services warangal, digital marketing services in warangal, best digital marketing agency warangal, seo company telangana, digital marketing agency hyderabad, digital marketing services india, online marketing company warangal, seo agency india, ppc agency warangal, content marketing warangal, whatsapp marketing warangal, influencer marketing telangana, email marketing services india",
         url: "https://nevatrix.com/services/digital-marketing",
         service: "Digital Marketing Services",
         breadcrumb: [
@@ -133,11 +133,11 @@ const PAGE_DATA: Record<
     // "saas development" locally — easy ranking opportunity
     // Gap added: CRM development, ERP development, enterprise software
     "full-stack": {
-        title: "Full Stack Development Company in Warangal | Nevatrix",
+        title: "Custom Software Development Company in Warangal | Nevatrix",
         description:
-            "Nevatrix is a full stack web development company in Warangal, India building React, Next.js, Node.js and MERN stack web applications, SaaS platforms and enterprise software for startups and businesses across India, USA and Canada. Hire expert full stack developers today.",
+            "Nevatrix is a custom software development company in Warangal building scalable web applications, SaaS platforms and business software solutions for startups and enterprises across India.",
         keywords:
-            "full stack development company warangal, full stack developers warangal, web application development warangal, software development company warangal, it company warangal, full stack developers near me, web app developers near me warangal, mern stack development company india, mern stack developers india, react development company india, nextjs development company india, nodejs development company india, react developers india, nodejs developers india, typescript developers india, saas development company india, saas application development india, web application development company india, custom web application development india, crm development company india, erp development company india, enterprise software development india, startup web development india, mvp development company india, hire full stack developers india, hire react developers india, hire nodejs developers india, hire mern stack developers india, software development company telangana, full stack development telangana, web application development telangana, affordable full stack development india, offshore web development india, custom software development warangal, bespoke software development telangana",
+            "software development company in warangal, custom software development india, web application development warangal, saas development company india, software developers warangal",
         url: "https://nevatrix.com/services/full-stack",
         service: "Full Stack Development",
         breadcrumb: [
@@ -157,7 +157,7 @@ const PAGE_DATA: Record<
         description:
             "Nevatrix is the best mobile app development company in Warangal, Telangana building Android and iOS apps using React Native and Flutter. We build startup MVPs, ecommerce apps and on-demand apps for businesses across Warangal, Hanamkonda, Telangana, India, USA and Canada.",
         keywords:
-            "mobile app development company in warangal, mobile app development warangal, android app development warangal, ios app development warangal, app development company warangal, mobile app developers warangal, mobile app developers near me, app development company near me warangal, best mobile app development company warangal, top app developers warangal, best android app developers warangal, react native development company india, react native app development warangal, flutter app development company india, flutter app development warangal, android app development company india, ios app development company india, cross platform app development india, pwa development company india, progressive web app development india, hybrid app development india, kotlin app development india, ecommerce app development india, on demand app development india, food delivery app development india, startup app development india, mvp app development india, business app development india, mobile app development company hanamkonda, app developers hanamkonda, mobile app development khammam, hire app developers india, hire react native developers india, hire flutter developers india, mobile app development company india, mobile app development company telangana, affordable app development india, app development cost india, app development company near me",
+            "mobile app development company in warangal, app development warangal, android app development warangal, ios app development warangal, mobile app developers warangal, mobile app development telangana, mobile app development india",
         url: "https://nevatrix.com/services/mobile-app",
         service: "Mobile App Development",
         breadcrumb: [
@@ -175,7 +175,7 @@ const PAGE_DATA: Record<
         description:
             "Build your online store with Nevatrix — a professional ecommerce website development company in Warangal. We build Shopify, WooCommerce and custom ecommerce platforms with payment gateway integration, inventory management and mobile-first design. Serving businesses across Telangana and India.",
         keywords:
-            "ecommerce website development warangal, shopify developers warangal, woocommerce development telangana, online store development warangal, ecommerce development india, build online store warangal, ecommerce website design telangana, shopify store design india, ecommerce solutions warangal, best ecommerce company warangal, ecommerce development hanamkonda, shopify development india, woocommerce developers india, custom ecommerce development india, ecommerce website development telangana, payment gateway integration india, razorpay integration india, stripe payment integration india, multi vendor marketplace development india, b2b ecommerce development india, dropshipping website development india, inventory management system india, ecommerce seo services india, online store optimization india, ecommerce mobile app india, ecommerce website cost india, affordable ecommerce development warangal, ecommerce development company near me, shopify experts warangal, woocommerce experts india",
+            "ecommerce website development warangal, shopify developers warangal, woocommerce development telangana, online store development warangal, ecommerce company warangal, ecommerce development india, ecommerce website design telangana",
         url: "https://nevatrix.com/services/ecommerce",
         service: "Ecommerce Development",
         breadcrumb: [
@@ -195,7 +195,7 @@ const PAGE_DATA: Record<
         description:
             "Nevatrix is a leading AI software development company in Warangal, India. We build AI-powered web apps, chatbots, business process automation, predictive analytics, LLM integrations and generative AI solutions for startups and enterprises across Telangana, India, USA and Canada.",
         keywords:
-            "ai software development company warangal, ai solutions warangal, ai development company warangal, artificial intelligence services warangal, ai software company telangana, ai development telangana, ai company warangal, ai automation warangal, machine learning development warangal, ai development company india, ai software development company india, artificial intelligence development india, machine learning company india, ai solutions for business india, custom ai development india, chatbot development india, chatbot development warangal, whatsapp chatbot development india, ai chatbot for business india, business automation ai india, ai web application development india, generative ai development india, llm development company india, llm fine tuning india, rag development company india, retrieval augmented generation india, ai agents development india, openai integration india, gpt integration services india, ai integration services india, predictive analytics company india, computer vision development india, nlp development company india, ai automation services india, ai powered software development india, ai app development company india, hire ai developers india, hire machine learning engineers india, ai development company usa, ai software company usa, offshore ai development company, ai development services telangana, intelligent software solutions india, ai mvp development india, startup ai development india, affordable ai development india, ai development cost india",
+            "ai software development company in warangal, ai solutions warangal, ai development company warangal, ai automation services warangal, ai software development india, artificial intelligence services telangana, machine learning development india",
         url: "https://nevatrix.com/services/ai-solutions",
         service: "AI Software Development",
         breadcrumb: [
@@ -258,12 +258,16 @@ const PAGE_DATA: Record<
 // HOMEPAGE DEFAULTS
 // ─────────────────────────────────────────────────────────────────
 const DEFAULT_SEO = {
-    title: "Web Development & Digital Marketing Company Warangal | Nevatrix",
+    title: "Web Development & Digital Marketing Company in Warangal | Nevatrix",
+
     description:
-        "Nevatrix is a leading web development and digital marketing company in Warangal, Telangana. We offer website design, ecommerce development, mobile apps, AI solutions and SEO services. Serving Warangal, Hanamkonda, Khammam, Nizamabad and remote clients across India, USA & Canada.",
+        "Nevatrix is a leading web development and digital marketing company in Warangal, Telangana. We build custom websites, web apps and mobile apps, and deliver SEO, Google Ads and social media marketing for startups and businesses across India.",
+
     keywords:
-        "web development company in warangal, digital marketing agency warangal, seo services warangal, website designers warangal, website development hanamkonda, web design company warangal, ecommerce development warangal, mobile app development telangana, ai software development india, web developers warangal, best it company warangal, software company warangal, web development khammam, website development nizamabad, it company warangal, full stack development india, react developers india, digital marketing telangana, affordable web development warangal, offshore web development india, web designers near me warangal, best web development company warangal, top it company warangal, best digital marketing company warangal, influencer marketing warangal, email marketing warangal, app development company warangal, website development company near me warangal, it company hanamkonda",
+        "web development company warangal, digital marketing agency warangal, software development company in warangal, website design warangal, web developers warangal, seo company warangal, software company telangana, web development india, digital marketing india, it company warangal telangana",
+
     url: "https://nevatrix.com",
+
     service: "Web Development & Digital Marketing",
     hasLayoutMetadata: false,
 };
@@ -679,7 +683,8 @@ export default function SEO({
                     <meta name="twitter:title" content={data.title} />
                     <meta name="twitter:description" content={data.description} />
                     <meta name="twitter:image" content={data.image} />
-                    {/* <meta name="twitter:site" content="@nevatrix" /> */}
+                    <meta name="twitter:site" content="@nevatrix" />
+                    <meta name="twitter:creator" content="@nevatrix" />
 
                     {/* ── Mobile / PWA ── */}
                     <meta name="theme-color" content="#0f172a" />

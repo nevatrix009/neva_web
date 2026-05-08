@@ -334,14 +334,14 @@ export default function DigitalMarketingPage() {
                             />
 
                             <p className="text-slate-300 text-lg leading-relaxed max-w-xl mb-10">
-                                Nevatrix helps businesses growth using
+                                Nevatrix helps businesses grow their
                                 website traffic, generate quality leads and boost revenue
                                 through SEO, Google Ads and social media marketing.
                             </p>
 
                             <div className="flex flex-wrap gap-4">
                                 <a
-                                    href="mailto:contact@nevatrix.com"
+                                    href="mailto:info@nevatrix.com"
                                     className="cta-btn inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-7 py-3.5 rounded-lg font-semibold text-sm shadow-lg shadow-blue-900/40"
                                 >
                                     Request Free SEO Audit <ArrowRight size={16} />
@@ -389,7 +389,7 @@ export default function DigitalMarketingPage() {
                                 <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
                                     Digital Marketing Services
                                     <br />
-                                    {/*<span className="text-slate-500 font-medium">in Warangal &amp; Telangana</span>*/}
+                                    <span className="text-slate-500 font-medium">in Warangal &amp; Telangana</span>
                                 </h2>
                             </div>
                             <p className="text-slate-500 text-sm leading-relaxed max-w-sm">
@@ -638,7 +638,7 @@ export default function DigitalMarketingPage() {
                             Nevatrix — the trusted digital marketing agency in Warangal, Telangana.
                         </p>
                         <a
-                            href="mailto:contact@nevatrix.com"
+                            href="mailto:info@nevatrix.com"
                             className="cta-btn inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-semibold shadow-xl shadow-blue-900/50"
                         >
                             <CheckCircle size={18} />

@@ -52,8 +52,10 @@ export default function Footer() {
                     {/* Social Icons */}
                     <div className="flex gap-4 pt-1">
                         <Link
-                            href="#"
+                            href="https://www.instagram.com/nevatrix"
                             aria-label="Follow Nevatrix on Instagram"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="hover:text-white transition"
                         >
                             <Instagram size={18} />
@@ -116,7 +118,7 @@ export default function Footer() {
                     <ul className="space-y-3 text-sm text-slate-400">
                         <li className="flex items-start gap-2">
                             <MapPin size={15} className="mt-0.5 shrink-0 text-slate-500" />
-                            <span>Warangal, Telangana 506001, India</span>
+                            <span>Kazipet, Warangal, Telangana 506004, India</span>
                         </li>
                         <li className="flex items-center gap-2">
                             <Phone size={15} className="shrink-0 text-slate-500" />
@@ -164,7 +166,7 @@ export default function Footer() {
             {/* ── Bottom Bar ── */}
             <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500">
                 <p>
-                    © 2012–{new Date().getFullYear()}{" "}
+                    © 2012––{new Date().getFullYear()}
                     <strong className="text-slate-400">Nevatrix Technologies Pvt. Ltd.</strong> | All Rights Reserved
                 </p>
                 <p className="text-center sm:text-right">

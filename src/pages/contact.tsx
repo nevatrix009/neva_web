@@ -373,7 +373,7 @@ export default function ContactPage() {
                     <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
                 </div>
                 <div className="bg-white py-4 px-6 text-center text-sm text-slate-500">
-                    <strong className="text-slate-700">Nevatrix Technologies Pvt. Ltd.</strong> — Kazipet, Warangal, Telangana 506001, India
+                    <strong className="text-slate-700">Nevatrix Technologies Pvt. Ltd.</strong> — Kazipet, Warangal, Telangana 506004, India
                 </div>
             </section>
 

@@ -310,7 +310,7 @@ export default function WebDevelopmentPage() {
                                 ecommerce platforms.
                             </p>
                             <div className="fu4 flex flex-wrap gap-4">
-                                <a href="mailto:contact@nevatrix.com" className="cta-btn inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-7 py-3.5 rounded-xl font-semibold text-sm shadow-lg shadow-cyan-900/40">
+                                <a href="mailto:info@nevatrix.com" className="cta-btn inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-7 py-3.5 rounded-xl font-semibold text-sm shadow-lg shadow-cyan-900/40">
                                     Get Free Website Quote <ArrowRight size={15} />
                                 </a>
                                 <a href="#process" className="inline-flex items-center gap-2 border border-slate-600 hover:border-slate-400 text-slate-300 hover:text-white px-7 py-3.5 rounded-xl font-semibold text-sm transition">
@@ -595,7 +595,7 @@ export default function WebDevelopmentPage() {
                             Get a free consultation from Nevatrix — the leading web development
                             company in Warangal, Telangana. Fast, SEO-optimised and conversion-focused.
                         </p>
-                        <a href="mailto:contact@nevatrix.com" className="cta-btn inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-4 rounded-xl font-semibold shadow-xl shadow-cyan-900/40">
+                        <a href="mailto:info@nevatrix.com" className="cta-btn inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-4 rounded-xl font-semibold shadow-xl shadow-cyan-900/40">
                             <CheckCircle size={18} /> Get Free Consultation <ArrowRight size={16} />
                         </a>
                     </div>

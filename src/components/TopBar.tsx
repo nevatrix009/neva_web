@@ -20,10 +20,10 @@ export default function TopBar() {
 
                 {/* Right: Social Icons */}
                 <div className="flex items-center gap-4">
-                    <Link href="#" aria-label="Instagram">
+                    <Link href="https://www.instagram.com/nevatrix" target="_blank" rel="noopener noreferrer" aria-label="Follow Nevatrix on Instagram">
                         <Instagram size={16} />
                     </Link>
-                    <Link href="https://www.linkedin.com/company/nevatrix/" aria-label="LinkedIn">
+                    <Link href="https://www.linkedin.com/company/nevatrix/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Nevatrix on LinkedIn">
                         <Linkedin size={16} />
                     </Link>
                 </div>

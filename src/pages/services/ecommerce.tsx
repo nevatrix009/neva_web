@@ -292,7 +292,7 @@ export default function EcommercePage() {
                 </p>
 
                 <a
-                    href="mailto:contact@nevatrix.com"
+                    href="mailto:info@nevatrix.com"
                     className="bg-white text-black px-8 py-3 rounded-xl font-medium hover:scale-105 transition inline-flex items-center gap-2 shadow-lg"
                 >
                     <CheckCircle size={18} /> Get Free Consultation

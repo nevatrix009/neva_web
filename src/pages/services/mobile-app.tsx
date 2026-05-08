@@ -311,7 +311,7 @@ export default function MobileAppPage() {
                                 Nevatrix designs and develops scalable Android and iOS mobile applications for startups and businesses — using React Native, Flutter and AI-powered tools for faster, smarter delivery.
                             </p>
                             <div className="fu4 flex flex-wrap gap-4">
-                                <a href="mailto:contact@nevatrix.com" className="cta-btn inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-7 py-3.5 rounded-xl font-semibold text-sm shadow-lg shadow-blue-900/40">
+                                <a href="mailto:info@nevatrix.com" className="cta-btn inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-7 py-3.5 rounded-xl font-semibold text-sm shadow-lg shadow-blue-900/40">
                                     Get Free App Estimate <ArrowRight size={15} />
                                 </a>
                                 <a href="#process" className="inline-flex items-center gap-2 border border-slate-600 hover:border-slate-400 text-slate-300 hover:text-white px-7 py-3.5 rounded-xl font-semibold text-sm transition">
@@ -612,7 +612,7 @@ export default function MobileAppPage() {
                         <p className="text-slate-400 text-base mb-10 max-w-xl mx-auto leading-relaxed">
                             Let Nevatrix turn your idea into a live Android and iOS app — on time, on budget and powered by AI for smarter, faster delivery.
                         </p>
-                        <a href="mailto:contact@nevatrix.com" className="cta-btn inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-semibold shadow-xl shadow-blue-900/50">
+                        <a href="mailto:info@nevatrix.com" className="cta-btn inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-semibold shadow-xl shadow-blue-900/50">
                             <CheckCircle size={18} /> Get Free Consultation <ArrowRight size={16} />
                         </a>
                     </div>

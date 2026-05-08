@@ -123,3 +123,10 @@ Disallow: /
 
 # ── Sitemap ────────────────────────────────────────────────
 Sitemap: https://nevatrix.com/sitemap.xml
+
+# ── IndexNow (Bing/Yandex instant indexing) ────────────────
+# Key file: /cfdef57ae97e65c6742bb8d10db30b29.txt
+# Submit via: https://www.bing.com/indexnow
+
+# ── AI LLMs.txt ────────────────────────────────────────────
+# https://nevatrix.com/llms.txt

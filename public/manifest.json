@@ -1,0 +1,22 @@
+{
+  "name": "Nevatrix Technologies",
+  "short_name": "Nevatrix",
+  "description": "Web Development & Digital Marketing Company in Warangal, Telangana",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
