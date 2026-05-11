@@ -4,6 +4,13 @@ import SEO from "@/components/SEO";
 import blogPosts from "@/data/blogPosts";
 import { ArrowRight, Clock, Tag, CalendarDays, Search } from "lucide-react";
 
+/* ── locale-safe date formatter (avoids SSR/client mismatch) ── */
+const MONTHS_SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function formatDate(iso: string) {
+    const [y, m, d] = iso.split("-");
+    return `${parseInt(d)} ${MONTHS_SHORT[parseInt(m) - 1]} ${y}`;
+}
+
 /* ── category accent colours ── */
 const CATEGORY_COLOR: Record<string, string> = {
     "Web Development":        "#0891B2",
@@ -208,9 +215,7 @@ export default function BlogIndex() {
                                                     </span>
                                                     <span className="inline-flex items-center gap-1 text-xs text-slate-400 ml-auto">
                                                         <CalendarDays size={11} />
-                                                        {new Date(post.date).toLocaleDateString("en-IN", {
-                                                            day: "numeric", month: "short", year: "numeric",
-                                                        })}
+                                                        {formatDate(post.date)}
                                                     </span>
                                                 </div>
 

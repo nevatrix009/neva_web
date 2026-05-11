@@ -5,6 +5,13 @@ import { useState } from "react";
 import blogPosts, { BlogPost, BlogSection } from "@/data/blogPosts";
 import { ArrowRight, Clock, Tag, CalendarDays, ChevronDown } from "lucide-react";
 
+/* ── locale-safe date formatter (avoids SSR/client mismatch) ── */
+const MONTHS_LONG = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+function formatDate(iso: string) {
+    const [y, m, d] = iso.split("-");
+    return `${parseInt(d)} ${MONTHS_LONG[parseInt(m) - 1]} ${y}`;
+}
+
 /* ── category accent colours ── */
 const CATEGORY_COLOR: Record<string, string> = {
     "Web Development":        "#0891B2",
@@ -299,9 +306,7 @@ export default function BlogPostPage({ post }: { post: BlogPost | null }) {
                             </span>
                             <span className="inline-flex items-center gap-1 text-xs text-slate-400">
                                 <CalendarDays size={11} />
-                                {new Date(post.date).toLocaleDateString("en-IN", {
-                                    day: "numeric", month: "long", year: "numeric",
-                                })}
+                                {formatDate(post.date)}
                             </span>
                         </div>
 
