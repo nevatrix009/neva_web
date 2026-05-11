@@ -1,7 +1,7 @@
 # ============================================================
 # robots.txt — Nevatrix Technologies Pvt. Ltd.
 # https://nevatrix.com
-# Updated: April 2026
+# Updated: May 2026
 # ============================================================
 
 
@@ -9,8 +9,12 @@
 User-agent: *
 Allow: /
 
-# Block Next.js internals (never indexable)
-Disallow: /_next/
+# Allow Next.js resources — images AND static JS/CSS bundles
+# Google needs these to fully render and index page content
+Allow: /_next/image
+Allow: /_next/static/
+
+# Block API routes only
 Disallow: /api/
 
 # Block utility / error pages
@@ -26,11 +30,13 @@ Disallow: /private/
 # ── Google ─────────────────────────────────────────────────
 User-agent: Googlebot
 Allow: /
-Disallow: /_next/
+Allow: /_next/image
+Allow: /_next/static/
 Disallow: /api/
 
 User-agent: Googlebot-Image
 Allow: /
+Allow: /_next/image
 
 User-agent: Googlebot-Video
 Allow: /
@@ -39,7 +45,8 @@ Allow: /
 # ── Bing ───────────────────────────────────────────────────
 User-agent: Bingbot
 Allow: /
-Disallow: /_next/
+Allow: /_next/image
+Allow: /_next/static/
 Disallow: /api/
 
 
@@ -123,10 +130,3 @@ Disallow: /
 
 # ── Sitemap ────────────────────────────────────────────────
 Sitemap: https://nevatrix.com/sitemap.xml
-
-# ── IndexNow (Bing/Yandex instant indexing) ────────────────
-# Key file: /cfdef57ae97e65c6742bb8d10db30b29.txt
-# Submit via: https://www.bing.com/indexnow
-
-# ── AI LLMs.txt ────────────────────────────────────────────
-# https://nevatrix.com/llms.txt
