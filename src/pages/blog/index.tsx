@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Link from "next/link";
+import { GetStaticProps } from "next";
 import SEO from "@/components/SEO";
-import blogPosts from "@/data/blogPosts";
+import blogPosts, { BlogPost } from "@/data/blogPosts";
 import { ArrowRight, Clock, Tag, CalendarDays, Search } from "lucide-react";
 
 /* ── locale-safe date formatter (avoids SSR/client mismatch) ── */
@@ -21,12 +22,12 @@ const CATEGORY_COLOR: Record<string, string> = {
 
 const ALL = "All";
 
-export default function BlogIndex() {
-    const categories = [ALL, ...Array.from(new Set(blogPosts.map((p) => p.category)))];
+export default function BlogIndex({ posts }: { posts: BlogPost[] }) {
+    const categories = [ALL, ...Array.from(new Set(posts.map((p) => p.category)))];
     const [active, setActive] = useState(ALL);
     const [query,  setQuery]  = useState("");
 
-    const filtered = blogPosts.filter((p) => {
+    const filtered = posts.filter((p) => {
         const matchCat = active === ALL || p.category === active;
         const matchQ   = query === "" ||
             p.title.toLowerCase().includes(query.toLowerCase()) ||
@@ -281,3 +282,8 @@ export default function BlogIndex() {
         </>
     );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+    const posts = [...blogPosts].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+    return { props: { posts } };
+};
